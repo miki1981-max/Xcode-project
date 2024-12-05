@@ -14,6 +14,7 @@
 		890B91272CFC83AF00309303 /* You_and_me_projectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890B91262CFC83AF00309303 /* You_and_me_projectTests.swift */; };
 		890B91312CFC83AF00309303 /* You_and_me_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890B91302CFC83AF00309303 /* You_and_me_projectUITests.swift */; };
 		890B91332CFC83AF00309303 /* You_and_me_projectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890B91322CFC83AF00309303 /* You_and_me_projectUITestsLaunchTests.swift */; };
+		89B07CC32CFF8F5200D1B5DF /* Welcomepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B07CC22CFF8F5200D1B5DF /* Welcomepage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		890B912C2CFC83AF00309303 /* You and me projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "You and me projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		890B91302CFC83AF00309303 /* You_and_me_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = You_and_me_projectUITests.swift; sourceTree = "<group>"; };
 		890B91322CFC83AF00309303 /* You_and_me_projectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = You_and_me_projectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		89B07CC22CFF8F5200D1B5DF /* Welcomepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcomepage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				890B91152CFC83AD00309303 /* You_and_me_projectApp.swift */,
 				890B91172CFC83AD00309303 /* ContentView.swift */,
+				89B07CC22CFF8F5200D1B5DF /* Welcomepage.swift */,
 				890B91192CFC83AF00309303 /* Assets.xcassets */,
 				890B911B2CFC83AF00309303 /* Preview Content */,
 			);
@@ -259,6 +262,7 @@
 			files = (
 				890B91182CFC83AD00309303 /* ContentView.swift in Sources */,
 				890B91162CFC83AD00309303 /* You_and_me_projectApp.swift in Sources */,
+				89B07CC32CFF8F5200D1B5DF /* Welcomepage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

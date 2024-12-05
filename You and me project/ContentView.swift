@@ -4,21 +4,43 @@
 //
 //  Created by Kamila Ponomarova on 2024-12-01.
 //
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
+        NavigationStack{
         VStack {
-            Image(systemName: "globe")
+            Image(systemName: "heart")//iconApp
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("You and Me")
+                .font(.largeTitle)
+                .italic()
+                .foregroundColor(.blue)
+            // The title
+            Text("Eldrly Care Service")
+                .background(Color.blue)
+                .foregroundColor(.white) .multilineTextAlignment(.center) .padding()
+           
+            NavigationLink(destination: Welcomepage()){
+            Button(action: {
+                //Stuff
+            }) {
+                    Text("Start")
+                        .background(Color.white)
+                        .foregroundColor(.blue)
+                        .cornerRadius(10)
+            }
+            
         }
-        .padding()
     }
+    
+}
+       
 }
 
+
 #Preview {
-    ContentView()
+    ContentView() // interface
 }
