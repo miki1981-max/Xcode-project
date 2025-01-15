@@ -9,37 +9,34 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        NavigationStack{
-        VStack {
-            Image(systemName: "heart")//iconApp
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("You and Me")
-                .font(.largeTitle)
-                .italic()
-                .foregroundColor(.blue)
-            // The title
-            Text("Eldrly Care Service")
-                .background(Color.blue)
-                .foregroundColor(.white) .multilineTextAlignment(.center) .padding()
-           
-            NavigationLink(destination: Welcomepage()){
-            Button(action: {
-                //Stuff
-            }) {
+        NavigationView {
+            VStack {
+                Image(systemName: "heart")//iconApp
+                    .imageScale(.large)
+                    .foregroundStyle(.tint)
+                Text("You and Me")
+                    .font(.largeTitle)
+                    .italic()
+                    .foregroundColor(.blue)
+                    
+                // The title
+                Text("Eldrly Care Service")
+                    .background(Color.blue)
+                    .foregroundColor(.white) .multilineTextAlignment(.center) .padding()
+                
+                NavigationLink(destination: WelcomePage()) {
                     Text("Start")
-                        .background(Color.white)
-                        .foregroundColor(.blue)
-                        .cornerRadius(10)
+                }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.background)
+
             
         }
+        
     }
     
 }
-       
-}
-
 
 #Preview {
     ContentView() // interface
