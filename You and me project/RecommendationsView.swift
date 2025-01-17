@@ -21,8 +21,8 @@ struct RecommendationsView: View {
                     
             }
         
-            .frame(maxWidth: 800, maxHeight: 400)
-            .background(Color.orange)
+            .frame(maxWidth: 800, maxHeight: 550)
+            .background(Color.background)
             
             VStack {
                 Text("Write the care receiver’s symptoms into a diary")
