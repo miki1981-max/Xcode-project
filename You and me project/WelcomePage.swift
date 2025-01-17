@@ -13,7 +13,7 @@ struct WelcomePage: View {
         "To keep notes in a diary",
         "To use the library"
     ]
-    
+
     var body: some View {
         
             

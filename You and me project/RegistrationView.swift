@@ -14,7 +14,7 @@ struct RegistrationView: View {
     
     var body: some View {
         
-    
+
         VStack {
             
                 
