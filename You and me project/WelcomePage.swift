@@ -23,8 +23,8 @@ struct WelcomePage: View {
                     
                     Text("This App helps you")
                         .font(.largeTitle)
-                        .foregroundStyle(Color.blue)
-                        .padding()
+                        .italic()
+                        .foregroundColor(.blue)
                     
                     Text("To create a care plan")
                     Text("To keep notes in a diary")
@@ -34,6 +34,7 @@ struct WelcomePage: View {
                     
                     NavigationLink(destination: LoginView ()) {
                         Text("Log in")
+                            .frame(width: 100.0, height:50)
                             .foregroundStyle(Color.blue)
                             .padding()
                             .background(Color.white)

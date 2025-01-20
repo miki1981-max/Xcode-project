@@ -46,7 +46,8 @@ struct RegistrationView: View {
         NavigationLink(destination: GeneralinformationIView2()) {
             
             Text("Sign up")
-                .foregroundStyle(Color.blue)
+                .foregroundColor(Color.blue)
+                .frame(width: 100.0, height:50)
                 .background(Color.white)
             
         }
