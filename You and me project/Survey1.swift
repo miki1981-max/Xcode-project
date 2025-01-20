@@ -13,9 +13,10 @@ struct Survey1: View {
     
     var body: some View {
         
-        VStack {
             VStack {
-                VStack {
+                
+                
+                    
                     Text("Survey")
                         .padding(.bottom,20)
                 }
