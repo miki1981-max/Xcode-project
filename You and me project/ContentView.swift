@@ -8,7 +8,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
+    
         NavigationView {
             VStack {
                 Image(systemName: "heart")//iconApp
@@ -26,6 +26,9 @@ struct ContentView: View {
                 
                 NavigationLink(destination: WelcomePage()) {
                     Text("Start")
+                        .foregroundColor(Color.blue)
+                        .frame(width: 100.0, height:50)
+                        .background(Color.white)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
