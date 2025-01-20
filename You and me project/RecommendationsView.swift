@@ -14,6 +14,7 @@ struct RecommendationsView: View {
                 Text("Recommendations for a person who uses a cane or walkers. The steps described below can be done either by a sick person independently or with the help of an assistant.")
                     .font(.title2)
                     .fontWeight(.heavy)
+                    .navigationBarTitle(Text("Recommendations"))
                 ScrollView {
                     VStack {
                         NavigationLink(destination: Fillinginformation1()) {
