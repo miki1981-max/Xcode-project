@@ -13,62 +13,63 @@ struct Survey1: View {
     
     var body: some View {
         
+        VStack {
             VStack {
-                
-                
-                    
+                VStack {
                     Text("Survey")
                         .padding(.bottom,20)
-                        .offset(y:-200)
-                    
-                    
-                    Text("1.What is the care receiver's name?")
-                        .offset(y:-200)
+                }
                 
+                Spacer()
+                Text("1.What is the care receiver's name?")
+                TextField("", text:$care_reciever, prompt: Text("receiver's name")
+                    .foregroundColor(Color.gray))
+                    .padding(.horizontal,30)
                 
-                    
-                    TextField("receiver's name",text:$care_reciever)
-                        .padding(.horizontal,30)
-                        .offset(y:-170)
+                Spacer()
+            }
+            .background(Color.white)
+            Spacer()
+            VStack() {
                 
+                Text("2.Choose the gender")
                 
-                VStack() {
+                Spacer()
+                Toggle(isOn: $checkcond) {
+                    Text("Male")
+                }
+                .padding()
                 
-                    Text("2.Choose the gender")
-                        .offset(y:-50)
-                    
-                    Toggle(isOn: $checkcond) {
-                        Text("Male")
-                    }
-                    .padding()
-                    
-                    Toggle(isOn: $checkcond) {
-                        Text("Female")
-                        
-                    }
+                Spacer()
+                
+                Toggle(isOn: $checkcond) {
+                    Text("Female")
                     
                 }
                 
-                    .padding()
-                
-                
-                    
-                    
-                    NavigationLink(destination: Survey2 ()) {
-                        Text("Next")
-                            .foregroundStyle(Color.blue)
-                            .background(Color.white)
-                            .padding()
-                        
-                    }
-                
+                Spacer()
                 
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.background)
-        
-        
             
+            .padding()
+            
+            
+            
+            
+            NavigationLink(destination: Survey2 ()) {
+                Text("Next")
+                    .foregroundStyle(Color.blue)
+                    .padding()
+                
+            }
+            
+            
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.background)
+        
+        
+        
     }
 }
 
