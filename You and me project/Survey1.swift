@@ -15,6 +15,7 @@ struct Survey1: View {
         
             VStack {
                 
+                
                     
                     Text("Survey")
                         .padding(.bottom,20)
@@ -23,11 +24,13 @@ struct Survey1: View {
                     
                     Text("1.What is the care receiver's name?")
                         .offset(y:-200)
+                
+                
                     
                     TextField("receiver's name",text:$care_reciever)
                         .padding(.horizontal,30)
                         .offset(y:-170)
-                    
+                
                 
                 VStack() {
                 
