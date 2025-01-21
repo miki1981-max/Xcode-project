@@ -3,7 +3,7 @@
 //  You and me project
 //
 //  Created by Kamila Ponomarova on 2024-12-10.
-//
+//  This is frame 9 (in Figma); frames 10 and 11 will get separate Swift pages.
 
 import SwiftUI
 
