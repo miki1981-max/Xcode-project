@@ -1,5 +1,5 @@
 //
-//  Frame19View.swift
+//  Frame21View .swift
 //  You and me project
 //
 //  Created by Kaukab Farrukh on 2025-01-21.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct Frame19View: View {
-    @State private var temperature = "" 
+struct Frame21View: View {
+    @State private var bloodSugarLevel = "" // User input for blood sugar level
 
     var body: some View {
         VStack {
@@ -20,12 +20,12 @@ struct Frame19View: View {
                 .offset(y: -200)
 
             // Subtitle
-            Text("Body Temperature")
+            Text("Blood sugar level")
                 .font(.headline)
                 .offset(y: -200)
 
             // Instructions
-            Text("Please enter your or the care receiver's body temperature")
+            Text("Please enter your or care receiver's blood sugar level")
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
@@ -33,15 +33,15 @@ struct Frame19View: View {
 
             // Input Section
             VStack(spacing: 10) {
-                Text("TEMPERATURE")
+                Text("SUGAR LEVEL")
                     .font(.headline)
 
-                TextField("Enter temperature", text: $temperature)
+                TextField("Enter blood sugar level", text: $bloodSugarLevel)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.decimalPad) // Use numeric keyboard
                     .frame(width: 200)
 
-                Text("°C")
+                Text("mmol/L")
                     .font(.headline)
             }
             .offset(y: -150)
@@ -64,7 +64,7 @@ struct Frame19View: View {
             .offset(y: -100)
 
             // Next Button
-            NavigationLink(destination: Frame20View(bodyTemperature: temperature)) {
+            NavigationLink(destination: Frame22View()) { // Replace with the next screen's view
                 Text("Next")
                     .foregroundColor(.white)
                     .frame(maxWidth: 150, maxHeight: 44)
@@ -108,15 +108,16 @@ struct Frame19View: View {
     // Keypad Button Logic
     private func handleKeyPress(_ key: String) {
         if key == "Delete" {
-            if !temperature.isEmpty {
-                temperature.removeLast()
+            if !bloodSugarLevel.isEmpty {
+                bloodSugarLevel.removeLast()
             }
         } else {
-            temperature += key
+            bloodSugarLevel += key
         }
     }
 }
 
 #Preview {
-    Frame19View()
+    Frame21View()
 }
+
