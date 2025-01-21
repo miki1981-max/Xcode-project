@@ -64,7 +64,7 @@ struct Frame21View: View {
             .offset(y: -100)
 
             // Next Button
-            NavigationLink(destination: Frame22View()) { // Replace with the next screen's view
+            NavigationLink(destination: Frame22View(bloodSugarLevel: bloodSugarLevel)) {
                 Text("Next")
                     .foregroundColor(.white)
                     .frame(maxWidth: 150, maxHeight: 44)
