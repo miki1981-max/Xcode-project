@@ -1,13 +1,13 @@
 //
-//  RecommendationsView.swift
+//  RecommendationsView1.swift
 //  You and me project
 //
 //  Created by Kamila Ponomarova on 2024-12-10.
-//  This is frame 9 (in Figma); frames 10 and 11 will get separate Swift pages.
+//  This is frame 9 (in Figma); frames 10 and 11 have separate Swift pages.
 
 import SwiftUI
 
-struct RecommendationsView: View {
+struct RecommendationsView1: View {
     var body: some View {
         NavigationView {
             VStack {
@@ -15,7 +15,6 @@ struct RecommendationsView: View {
                     .font(.title2)
                     .fontWeight(.heavy)
                     .navigationBarTitle(Text("Recommendations"), displayMode:.inline)
-                ScrollView {
                     VStack {
                         NavigationLink(destination: Fillinginformation1()) {
                             Text("Morning")
@@ -39,41 +38,11 @@ struct RecommendationsView: View {
                             Text("Hygiene")
                                 .font(.largeTitle)
                         }
-                        .padding()
                         
                         Text("Hygiene plays an extremely important role in the life of a person with diabetes. Make sure you follow all steps.")
                             .fontWeight(.semibold)
                             .foregroundColor(Color.white)
                         
-                        NavigationLink(destination: Fillinginformation1()) {
-                            Text("Intimate hygiene")
-                                .font(.largeTitle)
-                        }
-                        .padding()
-                        
-                        Text("It's important that the care receiver takes all medications recommended by the doctor strictly at the time they were prescribed.")
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.white)
-                        
-                        NavigationLink(destination: Fillinginformation1()) {
-                            Text("Nutrition")
-                                .font(.largeTitle)
-                        }
-                        .padding()
-                        
-                        Text("A properly balanced diet is one of the main components of therapy for diabetes.")
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.white)
-                        
-                        NavigationLink(destination: Fillinginformation1()) {
-                            Text("Benefits of walking")
-                                .font(.largeTitle)
-                        }
-                        .padding()
-                        
-                        Text("It's important that the care receiver takes all medications recommended by the doctor strictly at the time they were prescribed.")
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.white)
                     }
                     .frame(maxWidth: 800, maxHeight: 900)
                     .background(Color.background)
@@ -82,8 +51,7 @@ struct RecommendationsView: View {
             .background(Color.background)
         }
     }
-}
 
 #Preview {
-    RecommendationsView()
+    RecommendationsView1()
 }

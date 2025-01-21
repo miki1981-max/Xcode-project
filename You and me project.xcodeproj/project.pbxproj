@@ -25,9 +25,11 @@
 		89D475092D01F6D30000DB82 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D475082D01F6D30000DB82 /* LoginView.swift */; };
 		89D4750B2D01FBBF0000DB82 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D4750A2D01FBBF0000DB82 /* RegistrationView.swift */; };
 		89E5D95E2D08C3F200B66090 /* GeneralinformationIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5D95D2D08C3F200B66090 /* GeneralinformationIView2.swift */; };
-		89E5D9622D08C57E00B66090 /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5D9612D08C57E00B66090 /* RecommendationsView.swift */; };
+		89E5D9622D08C57E00B66090 /* RecommendationsView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5D9612D08C57E00B66090 /* RecommendationsView1.swift */; };
 		89E5D9642D0DB42100B66090 /* Survey1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5D9632D0DB42100B66090 /* Survey1.swift */; };
 		89E5D9682D0DB47600B66090 /* Survey3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5D9672D0DB47600B66090 /* Survey3.swift */; };
+		A18CED0E2D402715001DB433 /* RecommendationsView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CED0D2D402715001DB433 /* RecommendationsView2.swift */; };
+		A18CED102D40272B001DB433 /* RecommendationsView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CED0F2D40272B001DB433 /* RecommendationsView3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,9 +71,11 @@
 		89D475082D01F6D30000DB82 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		89D4750A2D01FBBF0000DB82 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		89E5D95D2D08C3F200B66090 /* GeneralinformationIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralinformationIView2.swift; sourceTree = "<group>"; };
-		89E5D9612D08C57E00B66090 /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
+		89E5D9612D08C57E00B66090 /* RecommendationsView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView1.swift; sourceTree = "<group>"; };
 		89E5D9632D0DB42100B66090 /* Survey1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey1.swift; sourceTree = "<group>"; };
 		89E5D9672D0DB47600B66090 /* Survey3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey3.swift; sourceTree = "<group>"; };
+		A18CED0D2D402715001DB433 /* RecommendationsView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView2.swift; sourceTree = "<group>"; };
+		A18CED0F2D40272B001DB433 /* RecommendationsView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +134,9 @@
 				0A820AB72D401150002FB3D8 /* Frame23View.swift */,
 				0A820AB32D400ACD002FB3D8 /* Frame21View .swift */,
 				89D475082D01F6D30000DB82 /* LoginView.swift */,
-				89E5D9612D08C57E00B66090 /* RecommendationsView.swift */,
+				89E5D9612D08C57E00B66090 /* RecommendationsView1.swift */,
+				A18CED0D2D402715001DB433 /* RecommendationsView2.swift */,
+				A18CED0F2D40272B001DB433 /* RecommendationsView3.swift */,
 				89B55A6A2D273A2100C4EFB1 /* Fillinginformation1.swift */,
 				89E5D95D2D08C3F200B66090 /* GeneralinformationIView2.swift */,
 				89E5D9632D0DB42100B66090 /* Survey1.swift */,
@@ -303,7 +309,7 @@
 				0A820AB62D4010F6002FB3D8 /* Frame22View.swift in Sources */,
 				890B91162CFC83AD00309303 /* You_and_me_projectApp.swift in Sources */,
 				0A820AB42D400ACD002FB3D8 /* Frame21View .swift in Sources */,
-				89E5D9622D08C57E00B66090 /* RecommendationsView.swift in Sources */,
+				89E5D9622D08C57E00B66090 /* RecommendationsView1.swift in Sources */,
 				89E5D9682D0DB47600B66090 /* Survey3.swift in Sources */,
 				89D475092D01F6D30000DB82 /* LoginView.swift in Sources */,
 				0A820AB82D401150002FB3D8 /* Frame23View.swift in Sources */,
@@ -313,6 +319,8 @@
 				0A820AB22D400678002FB3D8 /* Frame20View.swift in Sources */,
 				0A7D4EBC2D3FCBBF001AA2A7 /* Frame19View.swift in Sources */,
 				89B55A6B2D273A2200C4EFB1 /* Fillinginformation1.swift in Sources */,
+				A18CED0E2D402715001DB433 /* RecommendationsView2.swift in Sources */,
+				A18CED102D40272B001DB433 /* RecommendationsView3.swift in Sources */,
 				89B55A692D1F3CCB00C4EFB1 /* Survey2.swift in Sources */,
 				89E5D9642D0DB42100B66090 /* Survey1.swift in Sources */,
 			);
