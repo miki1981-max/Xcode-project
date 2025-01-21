@@ -104,17 +104,21 @@ struct Frame20View: View {
             }
             .offset(y: -100)
 
-            // Save Button
-            Button(action: {
-                // Action for save button
-                print("Body Temperature: \(bodyTemperature), Time: \(currentTime), Place: \(measurementPlace), Notice: \(notice)")
-            }) {
-                Text("Save")
-                    .foregroundColor(.white)
-                    .frame(maxWidth: 150, maxHeight: 44)
-                    .background(Color.blue)
-                    .cornerRadius(8)
-            }
+            // Save & Next Button
+            NavigationLink(
+                destination: Frame21View(),
+                label: {
+                    Button(action: {
+                        saveInformation()
+                    }) {
+                        Text("Save & Next")
+                            .foregroundColor(.white)
+                            .frame(maxWidth: 150, maxHeight: 44)
+                            .background(Color.blue)
+                            .cornerRadius(8)
+                    }
+                }
+            )
             .offset(y: -80)
 
             Spacer()
@@ -158,6 +162,22 @@ struct Frame20View: View {
         dateFormatter.dateFormat = "HH:mm"
         currentTime = dateFormatter.string(from: Date())
     }
+
+    // Function to save information
+    private func saveInformation() {
+        let savedData: [String: Any] = [
+            "bodyTemperature": bodyTemperature,
+            "measurementPlace": measurementPlace,
+            "notice": notice,
+            "time": currentTime
+        ]
+        
+        // Save the dictionary to UserDefaults
+        UserDefaults.standard.set(savedData, forKey: "Frame20Data")
+
+        print("Data saved successfully!")
+    }
+
 }
 
 #Preview {
