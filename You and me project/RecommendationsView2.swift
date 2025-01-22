@@ -35,6 +35,15 @@ struct RecommendationsView2: View {
                         Text("It's important that the care receiver takes all medications recommended by the doctor strictly at the time they were prescribed.")
                             .fontWeight(.semibold)
                             .foregroundColor(Color.white)
+                        
+                        NavigationLink(destination: RecommendationsView3()) {
+                            Text("Next page")
+                                .foregroundColor(Color.blue)
+                                .frame(width: 100, height: 50)
+                                .background(Color.white)
+                                .fontWeight(.medium)
+                        }
+                        .padding()
                     }
                     .frame(maxWidth: 800, maxHeight: 900)
                     .background(Color.background)

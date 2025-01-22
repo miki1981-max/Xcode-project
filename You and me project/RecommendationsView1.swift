@@ -14,7 +14,7 @@ struct RecommendationsView1: View {
                 Text("Recommendations for a person who uses a cane or walkers. The steps described below can be done either by a sick person independently or with the help of an assistant.")
                     .font(.title2)
                     .fontWeight(.heavy)
-                    .navigationBarTitle(Text("Recommendations"), displayMode:.inline)
+                    .navigationBarTitle("")
                     VStack {
                         NavigationLink(destination: Fillinginformation1()) {
                             Text("Morning")
@@ -42,6 +42,15 @@ struct RecommendationsView1: View {
                         Text("Hygiene plays an extremely important role in the life of a person with diabetes. Make sure you follow all steps.")
                             .fontWeight(.semibold)
                             .foregroundColor(Color.white)
+                        
+                        NavigationLink(destination: RecommendationsView2()) {
+                            Text("Next page")
+                                .foregroundColor(Color.blue)
+                                .frame(width: 100, height: 50)
+                                .background(Color.white)
+                                .fontWeight(.medium)
+                        }
+                        .padding()
                         
                     }
                     .frame(maxWidth: 800, maxHeight: 900)
