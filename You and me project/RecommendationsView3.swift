@@ -14,14 +14,19 @@ struct RecommendationsView3: View {
                 Text("Recommendations for a person who uses a cane or walkers. The steps described below can be done either by a sick person independently or with the help of an assistant.")
                     .font(.title2)
                     .fontWeight(.heavy)
-                    .navigationBarTitle(Text("Recommendations"), displayMode:.inline)
+                    .navigationBarTitle(Text("Page 3"), displayMode:.inline)
                     VStack {
                         NavigationLink(destination: Fillinginformation1()) {
                             Text("Nutrition")
                                 .font(.largeTitle)
                         }
+                        .padding()
+                        .frame(width: 320, height: 50)
+                        .background(Color.white)
+                        .fontWeight(.medium)
+                        .cornerRadius(15)
                         
-                        Text("A properly balanced diet is one of the main components of therapy for diabetes.")
+                        Text("A properly balanced diet is one of the main conditions for keeping up health.")
                             .fontWeight(.semibold)
                             .foregroundColor(Color.white)
                         
@@ -30,6 +35,10 @@ struct RecommendationsView3: View {
                                 .font(.largeTitle)
                         }
                         .padding()
+                        .frame(width: 320, height: 50)
+                        .background(Color.white)
+                        .fontWeight(.medium)
+                        .cornerRadius(15)
                         
                         Text("It's important that the care receiver takes all medications recommended by the doctor strictly at the time they were prescribed.")
                             .fontWeight(.semibold)

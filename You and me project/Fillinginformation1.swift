@@ -9,8 +9,75 @@ import SwiftUI
 
 struct Fillinginformation1: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        
+        NavigationView {
+            VStack {
+                Text("Diary")
+                    .font(.title)
+                    .fontWeight(.heavy)
+                    .navigationBarTitle("")
+                VStack(alignment: .leading) {
+                    NavigationLink(destination: Fillinginformation1()) {
+                        Text("Weight                         ")
+                        Circle().stroke(lineWidth: 4).frame(width:33, height:33)
+                            .overlay(Text("➕"))
+                    }
+                    .padding()
+                    .frame(width: 220, height: 50)
+                    .background(Color.white)
+                    .fontWeight(.medium)
+                    .cornerRadius(15)
+                        
+                    NavigationLink(destination: Fillinginformation1()) {
+                        Text("Pressure                     ")
+                        Circle().stroke(lineWidth: 4).frame(width:33, height:33)
+                            .overlay(Text("➕"))
+                    }
+                    .padding()
+                    .frame(width: 220, height: 50)
+                    .background(Color.white)
+                    .fontWeight(.medium)
+                    .cornerRadius(10)
+                        
+                    NavigationLink(destination: Fillinginformation1()) {
+                        Text("Oxygen & pulse         ")
+                        Circle().stroke(lineWidth: 4).frame(width:33, height:33)
+                            .overlay(Text("➕"))
+                    }
+                    .padding()
+                    .frame(width: 220, height: 50)
+                    .background(Color.white)
+                    .fontWeight(.medium)
+                    .cornerRadius(10)
+                        
+                    NavigationLink(destination: Fillinginformation1()) {
+                        Text("Body temperature     ")
+                        Circle().stroke(lineWidth: 4).frame(width:33, height:33)
+                            .overlay(Text("➕"))
+                    }
+                    .padding()
+                    .frame(width: 220, height: 50)
+                    .background(Color.white)
+                    .fontWeight(.medium)
+                    .cornerRadius(10)
+                        
+                    NavigationLink(destination: RecommendationsView2()) {
+                        Text("Sugar level                  ")
+                        Circle().stroke(lineWidth: 4).frame(width:33, height:33)
+                            .overlay(Text("➕"))
+                    }
+                    .padding()
+                    .frame(width: 220, height: 50)
+                    .background(Color.white)
+                    .fontWeight(.medium)
+                    .cornerRadius(10)
+                    
+                    //Circle().stroke(lineWidth: 4).frame(width:33, height:33).overlay(Text("➕").font(.system(size:33)))
+                }
+                .frame(maxWidth: 800, maxHeight: 900)
+                .background(Color.background)
+            }
+        }
+        .background(Color.background)
     }
 }
 

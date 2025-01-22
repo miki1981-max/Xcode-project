@@ -19,16 +19,26 @@ struct RecommendationsView1: View {
                         NavigationLink(destination: Fillinginformation1()) {
                             Text("Morning")
                                 .font(.largeTitle)
+                                .frame(width: 150, height: 50)
+                                .background(Color.white)
                         }
+                        .frame(width: 320, height: 50)
+                        .background(Color.white)
+                        .fontWeight(.medium)
+                        .cornerRadius(15)
                         Text("Write the care receiver's symptoms into a diary...")
                             .fontWeight(.semibold)
                             .foregroundColor(Color.white)
                         
                         NavigationLink(destination: Fillinginformation1()) {
-                            Text("Comfort and safety ")
+                            Text("Comfort & safety")
+                                .padding()
                                 .font(.largeTitle)
                         }
-                        .padding()
+                        .frame(width: 320, height: 50)
+                        .background(Color.white)
+                        .fontWeight(.medium)
+                        .cornerRadius(15)
                         
                         Text("Check whether the care receiver's in comfortable condition and feels safe. Make sure you follow all steps.")
                             .fontWeight(.semibold)
@@ -38,6 +48,11 @@ struct RecommendationsView1: View {
                             Text("Hygiene")
                                 .font(.largeTitle)
                         }
+                        .padding()
+                        .frame(width: 320, height: 50)
+                        .background(Color.white)
+                        .fontWeight(.medium)
+                        .cornerRadius(15)
                         
                         Text("Hygiene plays an extremely important role in the life of a person with diabetes. Make sure you follow all steps.")
                             .fontWeight(.semibold)
@@ -45,12 +60,12 @@ struct RecommendationsView1: View {
                         
                         NavigationLink(destination: RecommendationsView2()) {
                             Text("Next page")
-                                .foregroundColor(Color.blue)
-                                .frame(width: 100, height: 50)
-                                .background(Color.white)
-                                .fontWeight(.medium)
                         }
                         .padding()
+                        .frame(width: 115, height: 50)
+                        .background(Color.white)
+                        .fontWeight(.medium)
+                        .cornerRadius(15)
                         
                     }
                     .frame(maxWidth: 800, maxHeight: 900)

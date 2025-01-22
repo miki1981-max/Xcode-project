@@ -14,12 +14,16 @@ struct RecommendationsView2: View {
                 Text("Recommendations for a person who uses a cane or walkers. The steps described below can be done either by a sick person independently or with the help of an assistant.")
                     .font(.title2)
                     .fontWeight(.heavy)
-                    .navigationBarTitle(Text("Recommendations"), displayMode:.inline)
+                    .navigationBarTitle(Text("Page 2"), displayMode:.inline)
                     VStack {
                         NavigationLink(destination: Fillinginformation1()) {
                             Text("Intimate hygiene")
                                 .font(.largeTitle)
                         }
+                        .frame(width: 320, height: 50)
+                        .background(Color.white)
+                        .fontWeight(.medium)
+                        .cornerRadius(15)
                         
                         Text("Intimate hygiene plays an extremely important role in the life of a person with diabetes. Make sure you follow all steps.")
                             .fontWeight(.semibold)
@@ -31,8 +35,13 @@ struct RecommendationsView2: View {
                                 .font(.largeTitle)
                         }
                         .padding()
+                        .frame(width: 320, height: 50)
+                        .background(Color.white)
+                        .fontWeight(.medium)
+                        .cornerRadius(15)
                         
                         Text("It's important that the care receiver takes all medications recommended by the doctor strictly at the time they were prescribed.")
+                            .padding()
                             .fontWeight(.semibold)
                             .foregroundColor(Color.white)
                         
@@ -44,6 +53,10 @@ struct RecommendationsView2: View {
                                 .fontWeight(.medium)
                         }
                         .padding()
+                        .frame(width: 115, height: 50)
+                        .background(Color.white)
+                        .fontWeight(.medium)
+                        .cornerRadius(15)
                     }
                     .frame(maxWidth: 800, maxHeight: 900)
                     .background(Color.background)
