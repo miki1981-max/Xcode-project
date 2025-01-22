@@ -8,7 +8,6 @@
 import SwiftUI
 
 
-
 struct LoginView: View {
     @State private var mail = ""
     @State private var password = ""
@@ -18,33 +17,32 @@ struct LoginView: View {
         VStack {
             
             Text("Please,sign in")
-                    .font(.title)
-                    .padding(.bottom,200)
-                    
-                    
-                    .navigationBarTitle("Profile",
-                                        displayMode:.inline)
+                .font(.title)
+                .padding(.bottom,200)
+                .navigationBarTitle("Profile",
+                    displayMode:.inline)
             
-            TextField("Enter your e mail",text:$mail)
-                .padding()
+            TextField("", text:$mail, prompt: Text("Enter your e-mail")
+                .foregroundColor(Color.gray))
+                .padding(.horizontal,30)
                 .offset(y:-80)
-                
+                .lineSpacing(10)
+
             SecureField("Enter your password,text",text:$password)
                 .padding()
-                .offset(y:-80)
-            
-            
-            
-            Text("You entered:\(password)")
-                .padding()
+
+            SecureField("", text:$password, prompt: Text("Enter your password")
+                .foregroundColor(Color.gray))
+                .padding(.horizontal,30)
                 .offset(y:-80)
                 
+            
             NavigationLink(destination: RecommendationsView1()) {
                 Text("Sign in")
                     .foregroundStyle(Color.blue)
                     .padding()
                     .background(Color.white)
-                
+                    .cornerRadius(10)
                     
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -52,13 +50,8 @@ struct LoginView: View {
         }
     
         
-        
-    
-        
-      }
     }
-
-
+}
 
 #Preview {
     LoginView()

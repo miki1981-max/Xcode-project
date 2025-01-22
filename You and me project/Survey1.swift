@@ -21,9 +21,11 @@ struct Survey1: View {
                 }
                 
                 Spacer()
-                Text("1.What is the care receiver's name?")
+                Text("1. What is the care receiver's name?")
                 TextField("", text:$care_reciever, prompt: Text("receiver's name")
                     .foregroundColor(Color.gray))
+                    .background(Color.white)
+                    .cornerRadius(10)
                     .padding(.horizontal,30)
                 
                 Spacer()
@@ -32,7 +34,7 @@ struct Survey1: View {
             Spacer()
             VStack() {
                 
-                Text("2.Choose the gender")
+                Text("2. Choose the gender")
                 
                 Spacer()
                 Toggle(isOn: $checkcond) {
@@ -50,20 +52,14 @@ struct Survey1: View {
                 Spacer()
                 
             }
-            
             .padding()
             
             
-            
-            
-            NavigationLink(destination: Survey2 ()) {
+            NavigationLink(destination: Survey2()) {
                 Text("Next")
                     .foregroundStyle(Color.blue)
                     .padding()
-                
             }
-            
-            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.background)

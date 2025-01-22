@@ -11,41 +11,41 @@ struct CheckboxItem {
     var name: String
     var isChecked: Bool
 }
-struct CheckboxView: View{
+struct CheckboxView: View {
     @Binding var item : CheckboxItem
     
     var body: some View {
-        VStack{
-        HStack {
-            Text(item.name)
-            Spacer()
-            Image(systemName:item.isChecked     ?"checkmark.circle.fill"
+        VStack {
+            HStack {
+                Text(item.name)
+                Spacer()
+                Image(systemName:item.isChecked ? "checkmark.circle.fill"
                   :"circle")
-            .foregroundColor(item.isChecked ?
+                .foregroundColor(item.isChecked ?
                 .green:.gray)
                 .font(.system(size:22))
                 .onTapGesture {
                     item.isChecked.toggle()
                 }
-                
-                }
+            }
         }
     }
 }
+
 struct Survey3: View {
     @State private var items = [
         CheckboxItem(name:"moves with the help of walkers",isChecked: false),
         CheckboxItem(name:"can not walk but can sit without support",isChecked: false),
         CheckboxItem(name:"always lies",isChecked: false),
     ]
-    var body: some View{
-        NavigationView{
+    var body: some View {
+        NavigationView {
             VStack(){
                 Text("Survey")
                     .font(.largeTitle)
                 Spacer()
                 Spacer()
-                Text("How does care receiver move?")
+                Text("How does the care receiver move?")
                     .font(.headline)
                 List{
                     ForEach($items,id:\.name){
@@ -68,21 +68,12 @@ struct Survey3: View {
                     .background(Color.black)
             }
         }
-      }
     }
+}
 
 struct CheckboxView_Preview:PreviewProvider{
     static var previews:some View {
         Survey3()
     }
 }
-
-                
-               
-            
-            
-        
-        
- 
-
 

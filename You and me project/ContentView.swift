@@ -20,7 +20,7 @@ struct ContentView: View {
                     .foregroundColor(.blue)
                     
                 // The title
-                Text("Eldrly Care Service")
+                Text("Elderly Care Service")
                     .background(Color.blue)
                     .foregroundColor(.white) .multilineTextAlignment(.center) .padding()
                 
@@ -29,6 +29,7 @@ struct ContentView: View {
                         .foregroundColor(Color.blue)
                         .frame(width: 100.0, height:50)
                         .background(Color.white)
+                        .cornerRadius(10)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

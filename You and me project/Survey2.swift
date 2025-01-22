@@ -14,27 +14,22 @@ struct Survey2: View {
         VStack {
             
             
-            Text("3.What is the care receiver's date of birth?")
+            Text("3. What is the care receiver's date of birth?")
                 .offset(y:-200)
-                
-                            
-            
+
             TextField("date of birth ",text:$care_reciever)
                 .padding(.horizontal,30)
                 .offset(y:-170)
                 .navigationBarTitle("Survey",
-                                    displayMode:.inline)
+                displayMode:.inline)
             
-            
-            NavigationLink(destination: Survey3 ()) {
+            NavigationLink(destination: Survey3()) {
                 Text("Next")
                     .foregroundStyle(Color.blue)
                     .padding()
                     .background(Color.white)
-                
-                    
+                    .cornerRadius(10)
             }
-            
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

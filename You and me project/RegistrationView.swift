@@ -13,29 +13,26 @@ struct RegistrationView: View {
     @State private var contacts = ""
     
     var body: some View {
-        
-
         VStack {
-            
+            Text("Registration form")
+                .font(.title)
                 
-                Text("Registration form")
-                    .font(.title)
-            
-            
-            
+            TextField("", text:$First_Name, prompt: Text("Enter your name")
+                .foregroundColor(Color.gray))
+                .padding(.horizontal,30)
+                .lineSpacing(10)
                 
-                TextField("Enter your First name",text:$First_Name)
-                    .padding()
-                
-                TextField("Enter your Last name",text:$Last_Name)
-                    .padding()
-                
-                TextField("Enter your mobile number or e mail",text:$contacts)
-                    .padding()
-                    .navigationBarTitle("Profile",
-                                        displayMode:.inline)
-                
-            
+            TextField("", text:$Last_Name, prompt: Text("Enter your last name")
+                .foregroundColor(Color.gray))
+                .padding(.horizontal,30)
+                .lineSpacing(10)
+
+            TextField("", text:$contacts, prompt: Text("Enter your mobile phone or e mail")
+                .foregroundColor(Color.gray))
+                .padding(.horizontal,30)
+                .lineSpacing(10)
+                .navigationBarTitle("Profile",
+                    displayMode:.inline)
            
             
             
@@ -43,18 +40,18 @@ struct RegistrationView: View {
         
         
         
-        NavigationLink(destination: GeneralinformationIView2()) {
+            NavigationLink(destination: GeneralinformationIView2()) {
             
-            Text("Sign up")
-                .foregroundColor(Color.blue)
-                .frame(width: 100.0, height:50)
-                .background(Color.white)
-            
+                Text("Sign up")
+                    .foregroundColor(Color.blue)
+                    .frame(width: 100.0, height:50)
+                    .background(Color.white)
+                    .cornerRadius(10)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.background)
+
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.background)
-        }
-        
     }
 }
 

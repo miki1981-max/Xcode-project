@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A7D4EBC2D3FCBBF001AA2A7 /* Frame19View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D4EBB2D3FCBBF001AA2A7 /* Frame19View.swift */; };
-		0A820AB22D400678002FB3D8 /* Frame20View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A820AB12D400678002FB3D8 /* Frame20View.swift */; };
-		0A820AB42D400ACD002FB3D8 /* Frame21View .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A820AB32D400ACD002FB3D8 /* Frame21View .swift */; };
+		0A7D4EBC2D3FCBBF001AA2A7 /* BodyTempView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D4EBB2D3FCBBF001AA2A7 /* BodyTempView1.swift */; };
+		0A820AB22D400678002FB3D8 /* BodyTempView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A820AB12D400678002FB3D8 /* BodyTempView2.swift */; };
+		0A820AB42D400ACD002FB3D8 /* Frame21View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A820AB32D400ACD002FB3D8 /* Frame21View.swift */; };
 		0A820AB62D4010F6002FB3D8 /* Frame22View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A820AB52D4010F6002FB3D8 /* Frame22View.swift */; };
 		0A820AB82D401150002FB3D8 /* Frame23View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A820AB72D401150002FB3D8 /* Frame23View.swift */; };
 		890B91162CFC83AD00309303 /* You_and_me_projectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890B91152CFC83AD00309303 /* You_and_me_projectApp.swift */; };
@@ -50,9 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A7D4EBB2D3FCBBF001AA2A7 /* Frame19View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame19View.swift; sourceTree = "<group>"; };
-		0A820AB12D400678002FB3D8 /* Frame20View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame20View.swift; sourceTree = "<group>"; };
-		0A820AB32D400ACD002FB3D8 /* Frame21View .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Frame21View .swift"; sourceTree = "<group>"; };
+		0A7D4EBB2D3FCBBF001AA2A7 /* BodyTempView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTempView1.swift; sourceTree = "<group>"; };
+		0A820AB12D400678002FB3D8 /* BodyTempView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTempView2.swift; sourceTree = "<group>"; };
+		0A820AB32D400ACD002FB3D8 /* Frame21View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame21View.swift; sourceTree = "<group>"; };
 		0A820AB52D4010F6002FB3D8 /* Frame22View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame22View.swift; sourceTree = "<group>"; };
 		0A820AB72D401150002FB3D8 /* Frame23View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame23View.swift; sourceTree = "<group>"; };
 		890B91122CFC83AD00309303 /* You and me project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "You and me project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,11 +128,11 @@
 			children = (
 				890B91152CFC83AD00309303 /* You_and_me_projectApp.swift */,
 				890B91172CFC83AD00309303 /* ContentView.swift */,
-				0A7D4EBB2D3FCBBF001AA2A7 /* Frame19View.swift */,
-				0A820AB12D400678002FB3D8 /* Frame20View.swift */,
+				0A7D4EBB2D3FCBBF001AA2A7 /* BodyTempView1.swift */,
+				0A820AB12D400678002FB3D8 /* BodyTempView2.swift */,
 				0A820AB52D4010F6002FB3D8 /* Frame22View.swift */,
 				0A820AB72D401150002FB3D8 /* Frame23View.swift */,
-				0A820AB32D400ACD002FB3D8 /* Frame21View .swift */,
+				0A820AB32D400ACD002FB3D8 /* Frame21View.swift */,
 				89D475082D01F6D30000DB82 /* LoginView.swift */,
 				89E5D9612D08C57E00B66090 /* RecommendationsView1.swift */,
 				A18CED0D2D402715001DB433 /* RecommendationsView2.swift */,
@@ -308,7 +308,7 @@
 				890B91182CFC83AD00309303 /* ContentView.swift in Sources */,
 				0A820AB62D4010F6002FB3D8 /* Frame22View.swift in Sources */,
 				890B91162CFC83AD00309303 /* You_and_me_projectApp.swift in Sources */,
-				0A820AB42D400ACD002FB3D8 /* Frame21View .swift in Sources */,
+				0A820AB42D400ACD002FB3D8 /* Frame21View.swift in Sources */,
 				89E5D9622D08C57E00B66090 /* RecommendationsView1.swift in Sources */,
 				89E5D9682D0DB47600B66090 /* Survey3.swift in Sources */,
 				89D475092D01F6D30000DB82 /* LoginView.swift in Sources */,
@@ -316,8 +316,8 @@
 				89E5D95E2D08C3F200B66090 /* GeneralinformationIView2.swift in Sources */,
 				89B07CC32CFF8F5200D1B5DF /* WelcomePage.swift in Sources */,
 				89D4750B2D01FBBF0000DB82 /* RegistrationView.swift in Sources */,
-				0A820AB22D400678002FB3D8 /* Frame20View.swift in Sources */,
-				0A7D4EBC2D3FCBBF001AA2A7 /* Frame19View.swift in Sources */,
+				0A820AB22D400678002FB3D8 /* BodyTempView2.swift in Sources */,
+				0A7D4EBC2D3FCBBF001AA2A7 /* BodyTempView1.swift in Sources */,
 				89B55A6B2D273A2200C4EFB1 /* Fillinginformation1.swift in Sources */,
 				A18CED0E2D402715001DB433 /* RecommendationsView2.swift in Sources */,
 				A18CED102D40272B001DB433 /* RecommendationsView3.swift in Sources */,
