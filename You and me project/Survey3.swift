@@ -61,7 +61,7 @@ struct Survey3: View {
             .background(Color.background)
             
             
-            NavigationLink(destination: RecommendationsView()) {
+            NavigationLink(destination: RecommendationsView1()) {
                 Text("Next")
                     .foregroundColor(.black)
                     .padding()

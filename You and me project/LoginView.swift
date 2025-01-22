@@ -39,7 +39,7 @@ struct LoginView: View {
                 .padding()
                 .offset(y:-80)
                 
-            NavigationLink(destination: RecommendationsView ()) {
+            NavigationLink(destination: RecommendationsView1()) {
                 Text("Sign in")
                     .foregroundStyle(Color.blue)
                     .padding()
