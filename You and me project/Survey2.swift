@@ -15,13 +15,14 @@ struct Survey2: View {
             
             
             Text("3. What is the care receiver's date of birth?")
-                .offset(y:-200)
+                .padding(.top, 200)
+                
 
             TextField("", text:$care_reciever, prompt: Text("Enter your name")
                 .foregroundColor(Color.gray))
             
                 .padding(.horizontal,30)
-                .offset(y:-170)
+                
                 .navigationBarTitle("Survey",
                 displayMode:.inline)
             
@@ -32,10 +33,10 @@ struct Survey2: View {
                     .background(Color.white)
                     .cornerRadius(10)
             }
-            
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.background)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.background)
+        
     }
         
     
