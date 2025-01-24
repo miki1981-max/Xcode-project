@@ -17,7 +17,9 @@ struct Survey2: View {
             Text("3. What is the care receiver's date of birth?")
                 .offset(y:-200)
 
-            TextField("date of birth ",text:$care_reciever)
+            TextField("", text:$care_reciever, prompt: Text("Enter your name")
+                .foregroundColor(Color.gray))
+            
                 .padding(.horizontal,30)
                 .offset(y:-170)
                 .navigationBarTitle("Survey",
