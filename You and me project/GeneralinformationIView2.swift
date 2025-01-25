@@ -27,7 +27,7 @@ struct GeneralinformationIView2: View {
                     displayMode:.inline)
             
             
-            NavigationLink(destination: Survey1()) {
+            NavigationLink(destination: Survey12()) {
                 Text("Next")
                     .frame(width: 100.0, height:50)
                     .foregroundStyle(Color.blue)

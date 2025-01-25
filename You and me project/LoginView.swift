@@ -28,8 +28,7 @@ struct LoginView: View {
                 .offset(y:-80)
                 .lineSpacing(10)
 
-            SecureField("Enter your password,text",text:$password)
-                .padding()
+            
 
             SecureField("", text:$password, prompt: Text("Enter your password")
                 .foregroundColor(Color.gray))

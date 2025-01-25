@@ -58,8 +58,11 @@ struct Survey1: View {
             NavigationLink(destination: Survey2()) {
                 Text("Next")
                     .foregroundStyle(Color.blue)
-                    .padding()
+                    .background(Color.white)
             }
+            .cornerRadius(10)
+            .frame(width:150, height:150)
+            .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.background)
