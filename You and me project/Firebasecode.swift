@@ -1,0 +1,27 @@
+//
+//  Fire base code.swift
+//  You and me project
+//
+//  Created by Kamila Ponomarova on 2025-01-25.
+//
+
+import Foundation
+import FirebaseAuth
+
+@Observable class Firebasecode {
+    
+    var loginerror : String?
+    
+    func userRegister(email : String, password : String, name: String) {
+            Task {
+                do {
+                    let regResult = try await Auth.auth().createUser(withEmail: email, password: password)
+                    
+                    
+                } catch {
+                    print("FEL REG")
+                    loginerror = "Error reg"
+                }
+            }
+        }
+}
