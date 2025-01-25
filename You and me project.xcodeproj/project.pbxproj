@@ -22,6 +22,7 @@
 		89B07CC32CFF8F5200D1B5DF /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B07CC22CFF8F5200D1B5DF /* WelcomePage.swift */; };
 		89B55A692D1F3CCB00C4EFB1 /* Survey2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B55A682D1F3CCB00C4EFB1 /* Survey2.swift */; };
 		89B55A6B2D273A2200C4EFB1 /* Fillinginformation1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B55A6A2D273A2100C4EFB1 /* Fillinginformation1.swift */; };
+		89C4EE592D4520C200181C54 /* Survey12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C4EE582D4520C200181C54 /* Survey12.swift */; };
 		89D475092D01F6D30000DB82 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D475082D01F6D30000DB82 /* LoginView.swift */; };
 		89D4750B2D01FBBF0000DB82 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D4750A2D01FBBF0000DB82 /* RegistrationView.swift */; };
 		89E5D95E2D08C3F200B66090 /* GeneralinformationIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5D95D2D08C3F200B66090 /* GeneralinformationIView2.swift */; };
@@ -68,6 +69,7 @@
 		89B07CC22CFF8F5200D1B5DF /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
 		89B55A682D1F3CCB00C4EFB1 /* Survey2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey2.swift; sourceTree = "<group>"; };
 		89B55A6A2D273A2100C4EFB1 /* Fillinginformation1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fillinginformation1.swift; sourceTree = "<group>"; };
+		89C4EE582D4520C200181C54 /* Survey12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey12.swift; sourceTree = "<group>"; };
 		89D475082D01F6D30000DB82 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		89D4750A2D01FBBF0000DB82 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		89E5D95D2D08C3F200B66090 /* GeneralinformationIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralinformationIView2.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				89B55A6A2D273A2100C4EFB1 /* Fillinginformation1.swift */,
 				89E5D95D2D08C3F200B66090 /* GeneralinformationIView2.swift */,
 				89E5D9632D0DB42100B66090 /* Survey1.swift */,
+				89C4EE582D4520C200181C54 /* Survey12.swift */,
 				89B55A682D1F3CCB00C4EFB1 /* Survey2.swift */,
 				89E5D9672D0DB47600B66090 /* Survey3.swift */,
 				89B07CC22CFF8F5200D1B5DF /* WelcomePage.swift */,
@@ -316,6 +319,7 @@
 				89E5D95E2D08C3F200B66090 /* GeneralinformationIView2.swift in Sources */,
 				89B07CC32CFF8F5200D1B5DF /* WelcomePage.swift in Sources */,
 				89D4750B2D01FBBF0000DB82 /* RegistrationView.swift in Sources */,
+				89C4EE592D4520C200181C54 /* Survey12.swift in Sources */,
 				0A820AB22D400678002FB3D8 /* BodyTempView2.swift in Sources */,
 				0A7D4EBC2D3FCBBF001AA2A7 /* BodyTempView1.swift in Sources */,
 				89B55A6B2D273A2200C4EFB1 /* Fillinginformation1.swift in Sources */,
