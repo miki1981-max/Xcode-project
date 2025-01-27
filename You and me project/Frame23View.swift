@@ -9,6 +9,15 @@ import SwiftUI
 
 struct Frame23View: View {
     @State private var currentTime: String = ""
+    @State private var patient: String = ""
+    @State private var gender: String = ""
+    @State private var age: Int = 66
+    @State private var weight: Float = 65.0
+    @State private var pressure: Float = 80
+    @State private var oxygen: Int = 50
+    @State private var pulse: Int = 80
+    @State private var temperature: Float = 37
+    @State private var sugarlevel: Float = 30
     
     var body: some View {
         // Time Section
@@ -35,8 +44,105 @@ struct Frame23View: View {
                 currentTime = dateFormatter.string(from: Date())
             }
         }
-        .offset(y: -150)
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.white]), startPoint: .top, endPoint: .bottom))
+        //.offset(y: -160)
+        .frame(maxWidth: .infinity, maxHeight: 5)
+        
+        HStack {
+            VStack {
+                NavigationLink(destination: Fillinginformation1()) {
+                    Text("Name: \(patient)")
+                        .font(.title2)
+                }
+                .frame(width: 350, height: 50)
+                .background(Color.white)
+                .fontWeight(.medium)
+                .cornerRadius(15)
+                
+                NavigationLink(destination: Fillinginformation1()) {
+                    Text("Gender: \(gender)")
+                        .font(.title2)
+                }
+                .padding()
+                .frame(width: 350, height: 50)
+                .background(Color.white)
+                .fontWeight(.medium)
+                .cornerRadius(15)
+                
+                NavigationLink(destination: Fillinginformation1()) {
+                    Text("Age: \(age)")
+                        .font(.title2)
+                }
+                .padding()
+                .frame(width: 350, height: 50)
+                .background(Color.white)
+                .fontWeight(.medium)
+                .cornerRadius(15)
+                
+                NavigationLink(destination: Fillinginformation1()) {
+                    Text("Weight: \(weight)")
+                        .font(.title2)
+                }
+                .padding()
+                .frame(width: 350, height: 50)
+                .background(Color.white)
+                .fontWeight(.medium)
+                .cornerRadius(15)
+                
+                NavigationLink(destination: Fillinginformation1()) {
+                    Text("Pressure: \(pressure)")
+                        .font(.title2)
+                }
+                .padding()
+                .frame(width: 350, height: 50)
+                .background(Color.white)
+                .fontWeight(.medium)
+                .cornerRadius(15)
+                
+                NavigationLink(destination: Fillinginformation1()) {
+                    Text("Oxygen: \(oxygen)")
+                        .font(.title2)
+                }
+                .padding()
+                .frame(width: 350, height: 50)
+                .background(Color.white)
+                .fontWeight(.medium)
+                .cornerRadius(15)
+                
+                NavigationLink(destination: Fillinginformation1()) {
+                    Text("Pulse: \(pulse)")
+                        .font(.title2)
+                }
+                .padding()
+                .frame(width: 350, height: 50)
+                .background(Color.white)
+                .fontWeight(.medium)
+                .cornerRadius(15)
+                
+                NavigationLink(destination: Fillinginformation1()) {
+                    Text("Body temperature: \(temperature)")
+                        .font(.title2)
+                }
+                .padding()
+                .frame(width: 350, height: 50)
+                .background(Color.white)
+                .fontWeight(.medium)
+                .cornerRadius(15)
+                
+                NavigationLink(destination: Fillinginformation1()) {
+                    Text("Sugar level: \(sugarlevel)")
+                        .font(.title2)
+                }
+                .padding()
+                .frame(width: 350, height: 50)
+                .background(Color.white)
+                .fontWeight(.medium)
+                .cornerRadius(15)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.background)
+            
+        }
     }
 }
 
