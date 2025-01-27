@@ -24,4 +24,23 @@ import FirebaseAuth
                 }
             }
         }
+    
+    func userLogin(email : String, password : String) {
+            Task {
+                do {
+                    try await Auth.auth().signIn(withEmail: email, password: password)
+                } catch {
+                    print("FEL LOGIN")
+                    loginerror = "Error login"
+                }
+            }
+        }
+    
+    func userLogout() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+        
+        }
+    }
 }

@@ -5,40 +5,35 @@
 //  Created by Kamila Ponomarova on 2024-12-01.
 //
 import SwiftUI
+import FirebaseAuth
 
 struct ContentView: View {
-    var body: some View {
     
-        NavigationView {
+    @State var isLoggedIn : Bool?
+        
+        var body: some View {
+          
             VStack {
-                Image(systemName: "heart")//iconApp
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("You and Me")
-                    .font(.largeTitle)
-                    .italic()
-                    .foregroundColor(.blue)
-                    
-                // The title
-                Text("Elderly Care Service")
-                    .background(Color.blue)
-                    .foregroundColor(.white) .multilineTextAlignment(.center) .padding()
-                
-                NavigationLink(destination: WelcomePage()) {
-                    Text("Start")
-                        .foregroundColor(Color.blue)
-                        .frame(width: 100.0, height:50)
-                        .background(Color.white)
-                        .cornerRadius(10)
+                if isLoggedIn == true {
+                    GeneralinformationIView2()
+                }
+                if isLoggedIn == false {
+                    StartPageView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.background)
-
-            
+            .onAppear() {
+                Auth.auth().addStateDidChangeListener { auth, user in
+                    print("USER CHANGE")
+                    
+                    if Auth.auth().currentUser == nil {
+                        isLoggedIn = false
+                    } else {
+                        isLoggedIn = true
+                    }
+                }
+            }
         }
-        
-    }
     
 }
 
