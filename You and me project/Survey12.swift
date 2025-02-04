@@ -13,8 +13,8 @@ struct Survey12: View {
     @State private var  name = ""
        
     let names = [
-           "Mail",
-           "Femail",
+           "Male",
+           "Female",
            
     
        ]

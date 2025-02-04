@@ -18,46 +18,66 @@ struct LoginView: View {
     var body: some View {
 
         VStack {
+            Spacer()
             
             Text("Please,log in")
                 .font(.title)
-                .padding(.bottom,200)
-                .navigationBarTitle("Profile",
-                                    displayMode:.inline)
+                .padding(.bottom,100)
+
             
             TextField("", text:$email, prompt: Text("Enter your e-mail")
                 .foregroundColor(Color.gray))
-            .padding(.horizontal,30)
-            .offset(y:-80)
-            .lineSpacing(10)
+                .padding(.horizontal,30)
+                .padding(.bottom,30)
+                
+                
             
-            
+        
             
             SecureField("", text:$password, prompt: Text("Enter your password")
                 .foregroundColor(Color.gray))
-            .padding(.horizontal,30)
-            .offset(y:-80)
+
+                .padding(.horizontal,30)
+                .padding(.bottom,100)
+            
+                
+                
+            
+           
+            
+            
+            
             
             
             Button( action: {
                 Task {
-                    await firebase.userLogin (email: email, password: password)
+                    firebase.userLogin (email: email, password: password)
                 }
                 
             }) {
+
                 Text("Log in")
                     .foregroundStyle(Color.blue)
                     .padding()
                     .background(Color.white)
                     .cornerRadius(10)
+
+              
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.background)
+            
+
             
             }
-            .padding()
+        
+            
+
         }
     
         
     }
-}
+
 
 #Preview {
     LoginView()
