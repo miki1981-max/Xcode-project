@@ -8,116 +8,106 @@
 import SwiftUI
 
 struct Frame21View: View {
-    @State private var bloodSugarLevel = "" // User input for blood sugar level
+    @State private var temperature = ""
 
     var body: some View {
+        ZStack {
+            backgroundView
+            contentStack
+        }
+    }
+    
+    private var backgroundView: some View {
+        Color("Background").ignoresSafeArea()
+    }
+
+    private var contentStack: some View {
         VStack {
-            // Title
-            Text("Diary")
-                .font(.largeTitle)
-                .bold()
-                .padding(.bottom, 10)
-                .offset(y: -200)
+            titleSection
+            inputSection
+            keypadSection
+            nextButton
+        }
+    }
 
-            // Subtitle
-            Text("Blood sugar level")
-                .font(.headline)
-                .offset(y: -200)
-
-            // Instructions
-            Text("Please enter your or care receiver's blood sugar level")
+    private var titleSection: some View {
+        VStack {
+            Text("Diary").font(.largeTitle).bold()
+            Text("Blood Sugar Level").font(.headline)
+            Text("Please enter your or the care receiver's blood sugar level")
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
-                .offset(y: -180)
-
-            // Input Section
-            VStack(spacing: 10) {
-                Text("SUGAR LEVEL")
-                    .font(.headline)
-
-                TextField("Enter blood sugar level", text: $bloodSugarLevel)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.decimalPad) // Use numeric keyboard
-                    .frame(width: 200)
-
-                Text("mmol/L")
-                    .font(.headline)
-            }
-            .offset(y: -150)
-
-            // Custom Keypad Section
-            VStack(spacing: 10) {
-                ForEach(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "Delete"], id: \.self) { key in
-                    Button(action: {
-                        handleKeyPress(key)
-                    }) {
-                        Text(key)
-                            .font(.title)
-                            .frame(width: 60, height: 60)
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(8)
-                            .padding(5)
-                    }
-                }
-            }
-            .offset(y: -100)
-
-            // Next Button
-            NavigationLink(destination: Frame22View(bloodSugarLevel: bloodSugarLevel)) {
-                Text("Next")
-                    .foregroundColor(.white)
-                    .frame(maxWidth: 150, maxHeight: 44)
-                    .background(Color.blue)
-                    .cornerRadius(8)
-            }
-            .padding(.top, 20)
-
-            Spacer()
-
-            // Bottom Navigation Icons
-            HStack {
-                Button(action: {
-                    // Handle action for first icon
-                }) {
-                    Image(systemName: "person.fill")
-                        .font(.title)
-                }
-                Spacer()
-                Button(action: {
-                    // Handle action for second icon
-                }) {
-                    Image(systemName: "pencil")
-                        .font(.title)
-                }
-                Spacer()
-                Button(action: {
-                    // Handle action for third icon
-                }) {
-                    Image(systemName: "book.fill")
-                        .font(.title)
-                }
-            }
-            .padding(.horizontal, 40)
+        }.padding(.top, 20)
+    }
+    
+    private var inputSection: some View {
+        VStack {
+            TextField("Enter temperature", text: $temperature)
+                .keyboardType(.decimalPad)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .frame(width: 150)
+            Text("mmol/L").font(.headline)
+        }.padding(.top, 20)
+    }
+    
+    private var keypadSection: some View {
+        VStack(spacing: 10) {
+            keypadRow(keys: ["1", "2", "3"])
+            keypadRow(keys: ["4", "5", "6"])
+            keypadRow(keys: ["7", "8", "9"])
+            keypadRow(keys: ["C", "0", "⌫"])
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.white]), startPoint: .top, endPoint: .bottom))
-        .ignoresSafeArea()
     }
 
-    // Keypad Button Logic
-    private func handleKeyPress(_ key: String) {
-        if key == "Delete" {
-            if !bloodSugarLevel.isEmpty {
-                bloodSugarLevel.removeLast()
+    private func keypadRow(keys: [String]) -> some View {
+        HStack(spacing: 10) {
+            ForEach(keys, id: \.self) { key in
+                KeyButton(key: key, action: {
+                    handleKeyPress(key)
+                })
             }
-        } else {
-            bloodSugarLevel += key
+        }
+    }
+    
+    private var nextButton: some View {
+        Button("Next") {
+            // Action for next button
+        }
+        .foregroundColor(.white)
+        .frame(maxWidth: 150, maxHeight: 44)
+        .background(Color.blue)
+        .cornerRadius(8)
+        .padding(.top, 20)
+    }
+    
+    private func handleKeyPress(_ key: String) {
+        switch key {
+        case "⌫": temperature = String(temperature.dropLast())
+        case "C": temperature = ""
+        default: if temperature.count < 5 && key != "⌫" && key != "C" { temperature.append(key) }
         }
     }
 }
 
-#Preview {
-    Frame21View()
+struct Frame21Button: View {
+    var key: String
+    var action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text(key)
+                .font(.title)
+                .frame(width: 60, height: 60)
+                .background(Color.gray.opacity(0.2))
+                .cornerRadius(8)
+        }
+    }
+}
+
+struct Frame21View_Previews: PreviewProvider {
+    static var previews: some View {
+        Frame21View()
+    }
 }
 
