@@ -49,7 +49,7 @@ struct Fillinginformation1: View {
                     .fontWeight(.medium)
                     .cornerRadius(10)
                         
-                    NavigationLink(destination: Fillinginformation1()) {
+                    NavigationLink(destination:BodyTemperatureView ()) {
                         Text("Body temperature     ")
                         Circle().stroke(lineWidth: 4).frame(width:33, height:33)
                             .overlay(Text("➕"))

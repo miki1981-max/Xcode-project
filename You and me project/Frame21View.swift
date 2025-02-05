@@ -8,112 +8,114 @@
 import SwiftUI
 
 struct Frame21View: View {
-    @State private var bloodSugarLevel = "" // User input for blood sugar level
+    @State private var temperature = ""
 
     var body: some View {
+        ZStack {
+            Color("Background").ignoresSafeArea()
+            VStack {
+                TitleSection()
+                InputSection(temperature: $temperature)
+                KeypadSection(handleKeyPress: handleKeyPress)
+                NextButton()
+            }
+        }
+    }
+
+    private func handleKeyPress(_ key: String) {
+        switch key {
+        case "⌫":
+            temperature = String(temperature.dropLast())
+        case "C":
+            temperature = ""
+        default:
+            if temperature.count < 5 {
+                temperature.append(key)
+            }
+        }
+    }
+}
+
+struct TitleSection: View {
+    var body: some View {
         VStack {
-            // Title
-            Text("Diary")
-                .font(.largeTitle)
-                .bold()
-                .padding(.bottom, 10)
-                .offset(y: -200)
-
-            // Subtitle
-            Text("Blood sugar level")
-                .font(.headline)
-                .offset(y: -200)
-
-            // Instructions
-            Text("Please enter your or care receiver's blood sugar level")
+            Text("Diary").font(.largeTitle).bold()
+            Text("Body Temperature").font(.headline)
+            Text("Please enter your or the care receiver's body temperature")
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
-                .offset(y: -180)
-
-            // Input Section
-            VStack(spacing: 10) {
-                Text("SUGAR LEVEL")
-                    .font(.headline)
-
-                TextField("Enter blood sugar level", text: $bloodSugarLevel)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.decimalPad) // Use numeric keyboard
-                    .frame(width: 200)
-
-                Text("mmol/L")
-                    .font(.headline)
-            }
-            .offset(y: -150)
-
-            // Custom Keypad Section
-            VStack(spacing: 10) {
-                ForEach(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "Delete"], id: \.self) { key in
-                    Button(action: {
-                        handleKeyPress(key)
-                    }) {
-                        Text(key)
-                            .font(.title)
-                            .frame(width: 60, height: 60)
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(8)
-                            .padding(5)
-                    }
-                }
-            }
-            .offset(y: -100)
-
-            // Next Button
-            NavigationLink(destination: Frame22View(bloodSugarLevel: bloodSugarLevel)) {
-                Text("Next")
-                    .foregroundColor(.white)
-                    .frame(maxWidth: 150, maxHeight: 44)
-                    .background(Color.blue)
-                    .cornerRadius(8)
-            }
-            .padding(.top, 20)
-
-            Spacer()
-
-            // Bottom Navigation Icons
-            HStack {
-                Button(action: {
-                    // Handle action for first icon
-                }) {
-                    Image(systemName: "person.fill")
-                        .font(.title)
-                }
-                Spacer()
-                Button(action: {
-                    // Handle action for second icon
-                }) {
-                    Image(systemName: "pencil")
-                        .font(.title)
-                }
-                Spacer()
-                Button(action: {
-                    // Handle action for third icon
-                }) {
-                    Image(systemName: "book.fill")
-                        .font(.title)
-                }
-            }
-            .padding(.horizontal, 40)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.white]), startPoint: .top, endPoint: .bottom))
-        .ignoresSafeArea()
+        .padding(.top, 20)
     }
+}
 
-    // Keypad Button Logic
-    private func handleKeyPress(_ key: String) {
-        if key == "Delete" {
-            if !bloodSugarLevel.isEmpty {
-                bloodSugarLevel.removeLast()
-            }
-        } else {
-            bloodSugarLevel += key
+struct InputSection: View {
+    @Binding var temperature: String
+
+    var body: some View {
+        VStack {
+            TextField("Enter temperature", text: $temperature)
+                .keyboardType(.decimalPad)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .frame(width: 150)
+            Text("°C").font(.headline)
         }
+        .padding(.top, 20)
+    }
+}
+
+struct KeypadSection: View {
+    let handleKeyPress: (String) -> Void
+
+    var body: some View {
+        VStack(spacing: 10) {
+            KeypadRow(keys: ["1", "2", "3"], handleKeyPress: handleKeyPress)
+            KeypadRow(keys: ["4", "5", "6"], handleKeyPress: handleKeyPress)
+            KeypadRow(keys: ["7", "8", "9"], handleKeyPress: handleKeyPress)
+            KeypadRow(keys: ["C", "0", "⌫"], handleKeyPress: handleKeyPress)
+        }
+    }
+}
+
+struct KeypadRow: View {
+    let keys: [String]
+    let handleKeyPress: (String) -> Void
+
+    var body: some View {
+        HStack(spacing: 10) {
+            ForEach(keys, id: \.self) { key in
+                KeyButton(key: key, action: { handleKeyPress(key) })
+            }
+        }
+    }
+}
+
+struct Frame21KeyButton: View {
+    let key: String
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text(key)
+                .font(.title)
+                .frame(width: 60, height: 60)
+                .background(Color.gray.opacity(0.2))
+                .cornerRadius(8)
+        }
+    }
+}
+
+struct NextButton: View {
+    var body: some View {
+        Button("Next") {
+            // Next button action
+        }
+        .foregroundColor(.white)
+        .frame(maxWidth: 150, maxHeight: 44)
+        .background(Color.blue)
+        .cornerRadius(8)
+        .padding(.top, 20)
     }
 }
 
