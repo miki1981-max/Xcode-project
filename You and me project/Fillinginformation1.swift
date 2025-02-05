@@ -16,7 +16,7 @@ struct Fillinginformation1: View {
                     .fontWeight(.heavy)
                     .navigationBarTitle("")
                 VStack(alignment: .leading) {
-                    NavigationLink(destination: Fillinginformation1()) {
+                    NavigationLink(destination: Fillinginformation2()) {
                         Text("Weight                         ")
                         Circle().stroke(lineWidth: 4).frame(width:33, height:33)
                             .overlay(Text("➕"))
@@ -27,7 +27,7 @@ struct Fillinginformation1: View {
                     .fontWeight(.medium)
                     .cornerRadius(15)
                         
-                    NavigationLink(destination: Fillinginformation1()) {
+                    NavigationLink(destination: Fillinginformation4()) {
                         Text("Pressure                     ")
                         Circle().stroke(lineWidth: 4).frame(width:33, height:33)
                             .overlay(Text("➕"))
@@ -38,7 +38,7 @@ struct Fillinginformation1: View {
                     .fontWeight(.medium)
                     .cornerRadius(10)
                         
-                    NavigationLink(destination: Fillinginformation1()) {
+                    NavigationLink(destination: Fillinginformation6()) {
                         Text("Oxygen & pulse         ")
                         Circle().stroke(lineWidth: 4).frame(width:33, height:33)
                             .overlay(Text("➕"))
@@ -49,7 +49,7 @@ struct Fillinginformation1: View {
                     .fontWeight(.medium)
                     .cornerRadius(10)
                         
-                    NavigationLink(destination: Fillinginformation1()) {
+                    NavigationLink(destination:BodyTemperatureView ()) {
                         Text("Body temperature     ")
                         Circle().stroke(lineWidth: 4).frame(width:33, height:33)
                             .overlay(Text("➕"))
@@ -60,7 +60,7 @@ struct Fillinginformation1: View {
                     .fontWeight(.medium)
                     .cornerRadius(10)
                         
-                    NavigationLink(destination: RecommendationsView2()) {
+                    NavigationLink(destination: Frame21View()) {
                         Text("Sugar level                  ")
                         Circle().stroke(lineWidth: 4).frame(width:33, height:33)
                             .overlay(Text("➕"))

@@ -27,15 +27,15 @@ struct Frame20View: View {
             Text(bodyTemperature + " °C")
                 .font(.largeTitle)
                 .bold()
-            
+
             HStack(spacing: 10) {
                 Text(currentTime)
                     .font(.headline)
                     .padding()
-                    .frame(minWidth: 100, idealWidth:150, maxWidth: 200, maxHeight: 40)
+                    .frame(minWidth: 100, idealWidth: 150, maxWidth: 200, maxHeight: 40)
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(8)
-                
+
                 Button("TODAY") {
                     // "Today" button action
                 }
@@ -80,7 +80,7 @@ struct Frame20View: View {
         .padding(.horizontal, 20)
         .padding(.top, 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Background")) 
+        .background(Color("Background")) // Make sure your asset color is called "Background"
         .ignoresSafeArea()
         .onAppear {
             updateCurrentTime() // Update time on screen load
