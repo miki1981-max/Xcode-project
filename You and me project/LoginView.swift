@@ -23,6 +23,8 @@ struct LoginView: View {
             Text("Please,log in")
                 .font(.title)
                 .padding(.bottom,100)
+                .navigationBarTitle("Profile",
+                displayMode:.inline)
 
             
             TextField("", text:$email, prompt: Text("Enter your e-mail")
@@ -57,6 +59,7 @@ struct LoginView: View {
             }) {
 
                 Text("Log in")
+                    .frame(width:100.0,height:50)
                     .foregroundStyle(Color.blue)
                     .padding()
                     .background(Color.white)

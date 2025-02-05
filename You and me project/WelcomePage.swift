@@ -26,7 +26,7 @@ struct WelcomePage: View {
                 Text("To create a care plan")
                 Text("To keep notes in a diary")
                 Text("To use the library")
-                    .navigationBarTitle("Welcome",
+                    .navigationBarTitle("Profile",
                     displayMode:.inline)
                     
                 NavigationLink(destination: LoginView()) {

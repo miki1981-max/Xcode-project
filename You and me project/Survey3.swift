@@ -53,6 +53,12 @@ struct Survey3: View {
                         CheckboxView(item:$item)
                     }
                 }
+                NavigationLink(destination: RecommendationsView1()) {
+                    Text("Next")
+                        .foregroundColor(.black)
+                        .padding()
+                        .background(Color.white)
+                }
                 .listStyle(PlainListStyle())
                 Spacer()
             }
@@ -61,12 +67,7 @@ struct Survey3: View {
             .background(Color.background)
             
             
-            NavigationLink(destination: RecommendationsView1()) {
-                Text("Next")
-                    .foregroundColor(.black)
-                    .padding()
-                    .background(Color.black)
-            }
+            
         }
     }
 }

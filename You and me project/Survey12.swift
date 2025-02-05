@@ -24,35 +24,66 @@ struct Survey12: View {
             
            
             VStack{
+                
                 Text("1.What is your care receiver's name?")
                     .padding()
                 
                 TextField("", text:$name, prompt: Text("Enter your name")
                     .foregroundColor(Color.gray))
-                
-                    .padding(.horizontal,30)
-                    .padding(.top,10)
-                    .navigationBarTitle("Survey",
-                        displayMode:.inline)
+                .padding(.horizontal,30)
+                .padding(.top,10)
                 
                 
-                NavigationStack {
+                Text("2.Choose the gender")
+                    .padding(.top,150)
+                    .padding(.leading,-130)
                     
-                    List(names, id: \.self, selection: $selection) { name in
-                        Text(name)
-                        
-                    }
-                    
-                    
-                                        .navigationTitle("2.Choose the gender")
-                                                            
-                    .toolbar {
-                        EditButton()
-                    }
-                    
-                }
+                
+                .navigationBarTitle("Survey",
+                                    displayMode:.inline)
+                
+                
                 
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.background)
+            
+            
+                
+                
+                    
+                        
+                        
+                        
+                        
+                    
+                    NavigationStack {
+                        
+                        List(names, id: \.self, selection: $selection) { name in
+                            Text(name)
+                            
+                        }
+                        
+                        
+                        
+                        
+                        .toolbar {
+                            EditButton()
+                        }
+                        
+                    }
+                
+            NavigationLink(destination: Survey2()) {
+                Text("Next")
+                    .frame(width: 100.0, height:50)
+                    .foregroundStyle(Color.white)
+                    .padding()
+                    .background(Color.background)
+                    .cornerRadius(10)
+            }
+                
+                
+            
             
         }
         

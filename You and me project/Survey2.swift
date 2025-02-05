@@ -22,12 +22,14 @@ struct Survey2: View {
                 .foregroundColor(Color.gray))
             
                 .padding(.horizontal,30)
+                .padding()
                 
                 .navigationBarTitle("Survey",
                 displayMode:.inline)
             
             NavigationLink(destination: Survey3()) {
                 Text("Next")
+                    .frame(width: 100.0,height:50)
                     .foregroundStyle(Color.blue)
                     .padding()
                     .background(Color.white)
