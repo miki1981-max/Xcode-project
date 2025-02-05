@@ -389,7 +389,6 @@
 				A18CED102D40272B001DB433 /* RecommendationsView3.swift in Sources */,
 				89C4EE662D47C9FA00181C54 /* StartPageView.swift in Sources */,
 				89B55A692D1F3CCB00C4EFB1 /* Survey2.swift in Sources */,
-				89E5D9642D0DB42100B66090 /* Survey1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
