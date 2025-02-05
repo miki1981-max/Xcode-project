@@ -9,11 +9,15 @@ import SwiftUI
 
 struct BodyTemperatureView: View {
     @State private var temperature = ""
+    @State private var navigateToNextScreen = false // State to control navigation
 
     var body: some View {
-        ZStack {
-            backgroundView
-            contentStack
+        NavigationView {
+            ZStack {
+                backgroundView
+                contentStack
+            }
+            .navigationBarHidden(true) // Optionally hide the navigation bar
         }
     }
     
@@ -72,13 +76,18 @@ struct BodyTemperatureView: View {
     
     private var nextButton: some View {
         Button("Next") {
-            // Action for next button
+            navigateToNextScreen = true // Trigger navigation
         }
         .foregroundColor(.white)
         .frame(maxWidth: 150, maxHeight: 44)
         .background(Color.blue)
         .cornerRadius(8)
         .padding(.top, 20)
+        .background(
+            NavigationLink(destination: Frame20View(bodyTemperature: temperature), isActive: $navigateToNextScreen) {
+                EmptyView() // Invisible navigation link activated by the button
+            }
+        )
     }
     
     private func handleKeyPress(_ key: String) {

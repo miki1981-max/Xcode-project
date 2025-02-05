@@ -8,92 +8,100 @@
 import SwiftUI
 
 struct Frame21View: View {
-    @State private var temperature = ""
+    @State private var sugarLevel = "" // Corrected variable name
+    @State private var navigateToNextScreen = false // State to control navigation
 
     var body: some View {
-        ZStack {
-            Color("Background").ignoresSafeArea()
-            VStack {
-                TitleSection()
-                InputSection(temperature: $temperature)
-                KeypadSection(handleKeyPress: handleKeyPress)
-                NextButton()
+        NavigationView {
+            ZStack {
+                backgroundView
+                contentStack
             }
+            .navigationBarHidden(true) // Optionally hide the navigation bar
+        }
+    }
+    
+    private var backgroundView: some View {
+        Color("Background").ignoresSafeArea()
+    }
+
+    private var contentStack: some View {
+        VStack {
+            titleSection
+            inputSection
+            keypadSection
+            nextButton
         }
     }
 
-    private func handleKeyPress(_ key: String) {
-        switch key {
-        case "⌫":
-            temperature = String(temperature.dropLast())
-        case "C":
-            temperature = ""
-        default:
-            if temperature.count < 5 {
-                temperature.append(key)
-            }
-        }
-    }
-}
-
-struct TitleSection: View {
-    var body: some View {
+    private var titleSection: some View {
         VStack {
             Text("Diary").font(.largeTitle).bold()
-            Text("Body Temperature").font(.headline)
-            Text("Please enter your or the care receiver's body temperature")
+            Text("Blood Sugar Level").font(.headline)
+            Text("Please enter your or the care receiver's blood sugar level")
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
-        }
-        .padding(.top, 20)
+        }.padding(.top, 20)
     }
-}
-
-struct InputSection: View {
-    @Binding var temperature: String
-
-    var body: some View {
+    
+    private var inputSection: some View {
         VStack {
-            TextField("Enter temperature", text: $temperature)
+            TextField("Enter sugar level", text: $sugarLevel) // Corrected property
                 .keyboardType(.decimalPad)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width: 150)
-            Text("°C").font(.headline)
-        }
-        .padding(.top, 20)
+            Text("mg/dL").font(.headline) // Changed from "°C" to "mg/dL" for blood sugar
+        }.padding(.top, 20)
     }
-}
-
-struct KeypadSection: View {
-    let handleKeyPress: (String) -> Void
-
-    var body: some View {
+    
+    private var keypadSection: some View {
         VStack(spacing: 10) {
-            KeypadRow(keys: ["1", "2", "3"], handleKeyPress: handleKeyPress)
-            KeypadRow(keys: ["4", "5", "6"], handleKeyPress: handleKeyPress)
-            KeypadRow(keys: ["7", "8", "9"], handleKeyPress: handleKeyPress)
-            KeypadRow(keys: ["C", "0", "⌫"], handleKeyPress: handleKeyPress)
+            keypadRow(keys: ["1", "2", "3"])
+            keypadRow(keys: ["4", "5", "6"])
+            keypadRow(keys: ["7", "8", "9"])
+            keypadRow(keys: ["C", "0", "⌫"])
         }
     }
-}
 
-struct KeypadRow: View {
-    let keys: [String]
-    let handleKeyPress: (String) -> Void
-
-    var body: some View {
+    private func keypadRow(keys: [String]) -> some View {
         HStack(spacing: 10) {
             ForEach(keys, id: \.self) { key in
-                KeyButton(key: key, action: { handleKeyPress(key) })
+                KeyButton(key: key, action: {
+                    handleKeyPress(key)
+                })
             }
+        }
+    }
+    
+    private var nextButton: some View {
+        Button("Next") {
+            navigateToNextScreen = true // Trigger navigation
+        }
+        .foregroundColor(.white)
+        .frame(maxWidth: 150, maxHeight: 44)
+        .background(Color.blue)
+        .cornerRadius(8)
+        .padding(.top, 20)
+        .background(
+            NavigationLink(destination: Frame22View(bloodSugarLevel: sugarLevel), isActive: $navigateToNextScreen) {
+                EmptyView() // Invisible navigation link activated by the button
+            }
+        )
+    }
+    
+    private func handleKeyPress(_ key: String) {
+        switch key {
+        case "⌫": sugarLevel = String(sugarLevel.dropLast())
+        case "C": sugarLevel = ""
+        default: if sugarLevel.count < 5 && key != "⌫" && key != "C" { sugarLevel.append(key) }
         }
     }
 }
 
 struct Frame21KeyButton: View {
-    let key: String
-    let action: () -> Void
+    var key: String
+    var action: () -> Void
 
     var body: some View {
         Button(action: action) {
@@ -106,20 +114,8 @@ struct Frame21KeyButton: View {
     }
 }
 
-struct NextButton: View {
-    var body: some View {
-        Button("Next") {
-            // Next button action
-        }
-        .foregroundColor(.white)
-        .frame(maxWidth: 150, maxHeight: 44)
-        .background(Color.blue)
-        .cornerRadius(8)
-        .padding(.top, 20)
+struct Frame21View_Previews: PreviewProvider {
+    static var previews: some View {
+        Frame21View()
     }
 }
-
-#Preview {
-    Frame21View()
-}
-
