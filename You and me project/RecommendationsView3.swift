@@ -16,7 +16,7 @@ struct RecommendationsView3: View {
                     .fontWeight(.heavy)
                     .navigationBarTitle(Text("Page 3"), displayMode:.inline)
                     VStack {
-                        NavigationLink(destination: Fillinginformation1()) {
+                        NavigationLink(destination: Frame26View()) {
                             Text("Nutrition")
                                 .font(.largeTitle)
                         }
@@ -30,7 +30,7 @@ struct RecommendationsView3: View {
                             .fontWeight(.semibold)
                             .foregroundColor(Color.white)
                         
-                        NavigationLink(destination: Fillinginformation1()) {
+                        NavigationLink(destination: Frame26View()) {
                             Text("Benefits of walking")
                                 .font(.largeTitle)
                         }

@@ -24,12 +24,12 @@ struct Frame26View: View {
             // Buttons for different categories
             Spacer(minLength: 50)  // Adds spacing before the buttons
 
-            Button("Taking Medications") {
+            Button("Nutrition") {
                 // Navigation action or function here
             }
             .buttonStyle(Frame26ButtonStyle())
 
-            Button("Nutrition") {
+            Button("Benefits of Walking") {
                 // Navigation action or function here
             }
             .buttonStyle(Frame26ButtonStyle())
