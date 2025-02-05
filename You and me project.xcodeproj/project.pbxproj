@@ -35,6 +35,12 @@
 		89E5D9622D08C57E00B66090 /* RecommendationsView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5D9612D08C57E00B66090 /* RecommendationsView1.swift */; };
 		89E5D9642D0DB42100B66090 /* Survey1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5D9632D0DB42100B66090 /* Survey1.swift */; };
 		89E5D9682D0DB47600B66090 /* Survey3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5D9672D0DB47600B66090 /* Survey3.swift */; };
+		A100EFF72D53AB9F00112B6D /* Fillinginformation6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100EFF52D53AB9F00112B6D /* Fillinginformation6.swift */; };
+		A100EFF82D53AB9F00112B6D /* Fillinginformation2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100EFF12D53AB9F00112B6D /* Fillinginformation2.swift */; };
+		A100EFF92D53AB9F00112B6D /* Fillinginformation4.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100EFF32D53AB9F00112B6D /* Fillinginformation4.swift */; };
+		A100EFFA2D53AB9F00112B6D /* Fillinginformation5.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100EFF42D53AB9F00112B6D /* Fillinginformation5.swift */; };
+		A100EFFB2D53AB9F00112B6D /* Fillinginformation7.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100EFF62D53AB9F00112B6D /* Fillinginformation7.swift */; };
+		A100EFFC2D53AB9F00112B6D /* Fillinginformation3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100EFF22D53AB9F00112B6D /* Fillinginformation3.swift */; };
 		A18CED0E2D402715001DB433 /* RecommendationsView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CED0D2D402715001DB433 /* RecommendationsView2.swift */; };
 		A18CED102D40272B001DB433 /* RecommendationsView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CED0F2D40272B001DB433 /* RecommendationsView3.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +91,12 @@
 		89E5D9612D08C57E00B66090 /* RecommendationsView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView1.swift; sourceTree = "<group>"; };
 		89E5D9632D0DB42100B66090 /* Survey1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey1.swift; sourceTree = "<group>"; };
 		89E5D9672D0DB47600B66090 /* Survey3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey3.swift; sourceTree = "<group>"; };
+		A100EFF12D53AB9F00112B6D /* Fillinginformation2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fillinginformation2.swift; sourceTree = "<group>"; };
+		A100EFF22D53AB9F00112B6D /* Fillinginformation3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fillinginformation3.swift; sourceTree = "<group>"; };
+		A100EFF32D53AB9F00112B6D /* Fillinginformation4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fillinginformation4.swift; sourceTree = "<group>"; };
+		A100EFF42D53AB9F00112B6D /* Fillinginformation5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fillinginformation5.swift; sourceTree = "<group>"; };
+		A100EFF52D53AB9F00112B6D /* Fillinginformation6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fillinginformation6.swift; sourceTree = "<group>"; };
+		A100EFF62D53AB9F00112B6D /* Fillinginformation7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fillinginformation7.swift; sourceTree = "<group>"; };
 		A18CED0D2D402715001DB433 /* RecommendationsView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView2.swift; sourceTree = "<group>"; };
 		A18CED0F2D40272B001DB433 /* RecommendationsView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +167,12 @@
 				A18CED0D2D402715001DB433 /* RecommendationsView2.swift */,
 				A18CED0F2D40272B001DB433 /* RecommendationsView3.swift */,
 				89B55A6A2D273A2100C4EFB1 /* Fillinginformation1.swift */,
+				A100EFF12D53AB9F00112B6D /* Fillinginformation2.swift */,
+				A100EFF22D53AB9F00112B6D /* Fillinginformation3.swift */,
+				A100EFF32D53AB9F00112B6D /* Fillinginformation4.swift */,
+				A100EFF42D53AB9F00112B6D /* Fillinginformation5.swift */,
+				A100EFF52D53AB9F00112B6D /* Fillinginformation6.swift */,
+				A100EFF62D53AB9F00112B6D /* Fillinginformation7.swift */,
 				89E5D95D2D08C3F200B66090 /* GeneralinformationIView2.swift */,
 				89E5D9632D0DB42100B66090 /* Survey1.swift */,
 				89C4EE582D4520C200181C54 /* Survey12.swift */,
@@ -349,6 +367,12 @@
 				0A7D4EBC2D3FCBBF001AA2A7 /* BodyTempView1.swift in Sources */,
 				89B55A6B2D273A2200C4EFB1 /* Fillinginformation1.swift in Sources */,
 				A18CED0E2D402715001DB433 /* RecommendationsView2.swift in Sources */,
+				A100EFF72D53AB9F00112B6D /* Fillinginformation6.swift in Sources */,
+				A100EFF82D53AB9F00112B6D /* Fillinginformation2.swift in Sources */,
+				A100EFF92D53AB9F00112B6D /* Fillinginformation4.swift in Sources */,
+				A100EFFA2D53AB9F00112B6D /* Fillinginformation5.swift in Sources */,
+				A100EFFB2D53AB9F00112B6D /* Fillinginformation7.swift in Sources */,
+				A100EFFC2D53AB9F00112B6D /* Fillinginformation3.swift in Sources */,
 				A18CED102D40272B001DB433 /* RecommendationsView3.swift in Sources */,
 				89C4EE662D47C9FA00181C54 /* StartPageView.swift in Sources */,
 				89B55A692D1F3CCB00C4EFB1 /* Survey2.swift in Sources */,
