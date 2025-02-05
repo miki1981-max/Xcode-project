@@ -2,7 +2,7 @@
 //  Frame26View.swift
 //  You and me project
 //
-//  Created by Kaukab Farrukh on 2025-02-04.
+//  Created by Kaukab Farrukh on 2025-02-05.
 //
 
 import SwiftUI
@@ -13,16 +13,16 @@ struct Frame26View: View {
             Text("Library")
                 .font(.title)
                 .bold()
-                .padding(.top, 100)
+                .padding(.top, 140)  // Increased padding for better alignment at the top
 
             Text("Here you can find links to helpful articles on caring for elderly or sick persons.")
                 .font(.body)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 20)
-                .padding(.top, 50)
+                .padding(.top, 60)  // Added some top padding for spacing
 
             // Buttons for different categories
-            Spacer(minLength: 50)
+            Spacer(minLength: 50)  // Adds spacing before the buttons
 
             Button("Taking Medications") {
                 // Navigation action or function here
@@ -34,10 +34,10 @@ struct Frame26View: View {
             }
             .buttonStyle(Frame26ButtonStyle())
 
-            Spacer()
+            Spacer()  // Pushes everything up
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Background"))
+        .background(Color("Background"))  // Ensure this matches your asset name
         .ignoresSafeArea()
     }
 }

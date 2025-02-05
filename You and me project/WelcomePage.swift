@@ -13,10 +13,12 @@ struct WelcomePage: View {
         "To keep notes in a diary",
         "To use the library"
     ]
-
+    
     var body: some View {
-        VStack {
-            VStack {
+        NavigationStack {
+            ZStack {
+                // Background color from assets
+                Color("Background").ignoresSafeArea()
                 
                 Text("This App helps you")
                     .font(.largeTitle)
@@ -46,9 +48,6 @@ struct WelcomePage: View {
                     .font(.system(size:24))
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.background)
-                
         }
     }
 }

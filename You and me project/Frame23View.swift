@@ -20,7 +20,7 @@ struct Frame23View: View {
     @State private var sugarLevel: Float = 30
 
     var body: some View {
-        VStack {
+        VStack{
             HStack {
                 Text(currentTime)
                     .font(.headline)
@@ -30,28 +30,24 @@ struct Frame23View: View {
                     .cornerRadius(8)
                 
                 Spacer()
-                
-                Button(action: {
+
+                Button("TODAY") {
                     // "Today" button action
                     updateCurrentTime()
-                }) {
-                    Text("TODAY")
-                        .frame(maxWidth: 100, maxHeight: 40)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
                 }
+                .frame(maxWidth: 100, maxHeight: 40)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(8)
             }
-                .padding(.top, 20)
-                .padding(.horizontal, 20)
-                
-                Spacer().frame(height: 30)
-                
-                
+            .padding(.top, 20)
+                       .padding(.horizontal, 20)
+                       
+                       Spacer().frame(height: 30)
+                       .onAppear {
+                           updateCurrentTime()
+                       }
             
-            .onAppear {
-                updateCurrentTime()
-            }
 
             VStack(spacing: 10) {
                 Group {
@@ -71,7 +67,7 @@ struct Frame23View: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Background")) 
+        .background(Color("Background")) // Adjust this to use the correct color
         .ignoresSafeArea()
     }
 
@@ -102,3 +98,4 @@ struct Frame23View_Previews: PreviewProvider {
         Frame23View()
     }
 }
+
