@@ -31,7 +31,7 @@ struct StartPageView: View {
                         .foregroundColor(Color.blue)
                         .frame(width: 100.0, height:50)
                         .background(Color.white)
-                        .cornerRadius(10)
+                        .cornerRadius(15)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

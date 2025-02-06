@@ -7,6 +7,29 @@
 
 import SwiftUI
 
+struct EcureTextField: View{
+    
+    @State  private var isSecureField: Bool = true
+    @Binding var text: String
+    var body: some View {
+        HStack {
+            if isSecureField {
+                SecureField("Password",text: $text)
+            }else {
+                TextField(text, text: $text)
+            }
+        }.overlay(alignment:.trailing){
+            Image(systemName: isSecureField ? "eye.slash": "eye")
+                .onTapGesture {
+                    isSecureField.toggle()
+                }
+        }
+    }
+    
+
+    
+}
+
 struct RegistrationView: View {
     @State private var name = ""
 
@@ -20,6 +43,7 @@ struct RegistrationView: View {
         VStack {
             Text("Registration form")
                 .font(.title)
+                .padding(.bottom,100)
                 
             TextField("", text:$name, prompt: Text("Enter your name and last name")
                 .foregroundColor(Color.gray))
@@ -33,9 +57,10 @@ struct RegistrationView: View {
                 .padding(.horizontal,30)
                 .lineSpacing(10)
             
-            SecureField("", text:$password, prompt: Text("Enter your password")
-                .foregroundColor(Color.gray))
-                .padding(.horizontal,30)
+            SecureTextField(text:$password)
+            .padding(.horizontal,30)
+           
+                
                 .navigationBarTitle("Profile",
                     displayMode:.inline)
            
@@ -53,16 +78,21 @@ struct RegistrationView: View {
                     navigateToGeneralInfo = true
                 }) {
                     Text("Sign up")
+                        
                         .foregroundColor(Color.blue)
                         .frame(width: 100.0, height:50)
                         .background(Color.white)
-                        .cornerRadius(10)
+                        .cornerRadius(15)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.background)
+
                 .navigationDestination( isPresented:$navigateToGeneralInfo) {
                     GeneralinformationIView2()
             }
 
         }
+        
     }
 }
 

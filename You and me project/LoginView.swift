@@ -9,6 +9,25 @@ import SwiftUI
 import FirebaseCore
 import FirebaseAuth
 
+
+struct SecureTextField: View {
+    @State private var isSecureField: Bool = true
+    @Binding var text: String
+    var body: some View {
+        HStack {
+            if isSecureField {
+                SecureField("Password",text:$text)
+            } else {
+                TextField(text,text: $text)
+            }
+        }.overlay(alignment:.trailing){
+            Image(systemName: isSecureField ? "eye.slash": "eye")
+                .onTapGesture {
+                    isSecureField.toggle()
+                }
+        }
+        }
+    }
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
@@ -31,16 +50,17 @@ struct LoginView: View {
                 .foregroundColor(Color.gray))
                 .padding(.horizontal,30)
                 .padding(.bottom,30)
+            
+            SecureTextField(text:$password)
+                .padding(.horizontal,30)
+                .padding(.bottom,30)
+                            
                 
                 
             
         
             
-            SecureField("", text:$password, prompt: Text("Enter your password")
-                .foregroundColor(Color.gray))
-
-                .padding(.horizontal,30)
-                .padding(.bottom,100)
+           
             
                 
                 

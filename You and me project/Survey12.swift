@@ -56,22 +56,24 @@ struct Survey12: View {
                         
                         
                         
+            
+                NavigationStack {
                     
-                    NavigationStack {
-                        
-                        List(names, id: \.self, selection: $selection) { name in
-                            Text(name)
-                            
-                        }
-                        
-                        
-                        
-                        
-                        .toolbar {
-                            EditButton()
-                        }
+                    List(names, id: \.self, selection: $selection) { name in
+                        Text(name)
                         
                     }
+                    
+                    
+                    
+                    
+                    .toolbar {
+                        EditButton()
+                    }
+                    
+                }
+                
+            
                 
             NavigationLink(destination: Survey2()) {
                 Text("Next")

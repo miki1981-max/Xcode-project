@@ -33,7 +33,7 @@ struct Survey2: View {
                     .foregroundStyle(Color.blue)
                     .padding()
                     .background(Color.white)
-                    .cornerRadius(10)
+                    .cornerRadius(15)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)

@@ -15,42 +15,48 @@ struct WelcomePage: View {
     ]
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                // Background color from assets
-                Color("Background").ignoresSafeArea()
+        
+        VStack{
+            Text("This App helps you")
+                .font(.largeTitle)
+                .italic()
+                .foregroundColor(.blue)
+                .padding(.top,200)
+            
+            
+            Text("To create a care plan")
+            Text("To keep notes in a diary")
+            Text("To use the library")
                 
-                Text("This App helps you")
-                    .font(.largeTitle)
-                    .italic()
-                    .foregroundColor(.blue)
-                    
-                Text("To create a care plan")
-                Text("To keep notes in a diary")
-                Text("To use the library")
-                    .navigationBarTitle("Profile",
-                    displayMode:.inline)
-                    
+                .navigationBarTitle("Profile",
+                                    displayMode:.inline)
+            VStack{
                 NavigationLink(destination: LoginView()) {
                     Text("Log in")
-                    .frame(width: 100.0, height:50)
-                    .foregroundStyle(Color.blue)
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(10)
+                    
+                        .foregroundStyle(Color.black)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(15)
                 }
-
+                
                 NavigationLink(destination: RegistrationView()) {
                     Text("Registration")
-                    .padding()
-                    .foregroundStyle(Color.black)
-                    .font(.largeTitle)
-                    .font(.system(size:24))
+                        .padding()
+                        .foregroundStyle(Color.black)
+                        .font(.largeTitle)
+                        .font(.system(size:24))
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.background)
+
         }
+        
     }
 }
+    
+   
 
 #Preview {
     WelcomePage()

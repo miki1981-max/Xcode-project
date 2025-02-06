@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
-struct ContentView: View
+struct ContentView:View
 {
     
     @State var isLoggedIn : Bool?

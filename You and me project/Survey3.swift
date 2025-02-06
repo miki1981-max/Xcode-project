@@ -41,12 +41,13 @@ struct Survey3: View {
     var body: some View {
         NavigationView {
             VStack(){
-                Text("Survey")
-                    .font(.largeTitle)
-                Spacer()
-                Spacer()
-                Text("How does the care receiver move?")
+                
+                Text("4.How does the care receiver move?")
                     .font(.headline)
+                    .padding(.top,70)
+                    .padding(.leading,-50)
+                    .navigationBarTitle("Survey",
+                    displayMode:.inline)
                 List{
                     ForEach($items,id:\.name){
                         $item in
@@ -55,9 +56,11 @@ struct Survey3: View {
                 }
                 NavigationLink(destination: RecommendationsView1()) {
                     Text("Next")
+                        .frame(width: 100.0,height:50)
                         .foregroundColor(.black)
                         .padding()
                         .background(Color.white)
+                        .cornerRadius(15)
                 }
                 .listStyle(PlainListStyle())
                 Spacer()
