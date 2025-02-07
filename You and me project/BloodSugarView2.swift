@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Frame22View: View {
+struct BloodSugarView2: View {
     var bloodSugarLevel: String = "4.5" // Example level, update as needed
     @State private var currentTime: String = "" // To hold real-time
     @State private var selectedMealTiming: String = "Before a meal" // Default timing
@@ -105,7 +105,7 @@ struct Frame22View: View {
 
 struct Frame22View_Previews: PreviewProvider {
     static var previews: some View {
-        Frame22View()
+        BloodSugarView2()
     }
 }
 
