@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct Fillinginformation7: View {
-    var oxygenpulse: String // Passed from Frame 19
+struct BodyWeightView2: View {
+    var bodyweight: String // Get from Fillinginformation2
     @State private var currentTime: String = "" // To hold real-time
     @State private var notice: String = "" // Notice input
 
@@ -22,12 +22,12 @@ struct Fillinginformation7: View {
                 .offset(y: -200)
 
             // Subtitle
-            Text("Oxygen and pulse is...")
+            Text("Body weight is...")
                 .font(.headline)
                 .offset(y: -200)
 
-            // Temperature Display
-            Text(oxygenpulse)
+            // Weight Display
+            Text(bodyweight)
                 .font(.largeTitle)
                 .bold()
                 .offset(y: -180)
@@ -81,7 +81,7 @@ struct Fillinginformation7: View {
 
             // Save & Next Button
             NavigationLink(
-                destination: Fillinginformation1(),
+                destination: BodyWeightView1(),
                 label: {
                     Button(action: {
                         saveInformation()
@@ -141,13 +141,13 @@ struct Fillinginformation7: View {
     // Function to save information
     private func saveInformation() {
         let savedData: [String: Any] = [
-            "oxygenpulse": oxygenpulse,
+            "bodyWeight": bodyweight,
             "notice": notice,
             "time": currentTime
         ]
         
         // Save the dictionary to UserDefaults
-        UserDefaults.standard.set(savedData, forKey: "OxygenPulseData")
+        UserDefaults.standard.set(savedData, forKey: "BodyWeightData")
 
         print("Data saved successfully!")
     }
@@ -155,5 +155,5 @@ struct Fillinginformation7: View {
 }
 
 #Preview {
-    Fillinginformation7(oxygenpulse: "36.6") // Pass example value for preview
+    BodyWeightView2(bodyweight: "60") // Pass example value for preview
 }

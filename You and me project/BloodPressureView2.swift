@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Fillinginformation5: View {
+struct BloodPressureView2: View {
     var pressure: String // Get from Fillinginformation4
     @State private var currentTime: String = "" // To hold real-time
     @State private var notice: String = "" // Notice input
@@ -81,7 +81,7 @@ struct Fillinginformation5: View {
 
             // Save & Next Button
             NavigationLink(
-                destination: Frame21View(),
+                destination: BloodSugarView1(),
                 label: {
                     Button(action: {
                         saveInformation()
@@ -155,5 +155,5 @@ struct Fillinginformation5: View {
 }
 
 #Preview {
-    Fillinginformation5(pressure: "36.6") // Pass example value for preview
+    BloodPressureView2(pressure: "36.6") // Pass example value for preview
 }

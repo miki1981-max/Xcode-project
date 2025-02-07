@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Frame21View: View {
+struct BloodSugarView1: View {
     @State private var sugarLevel = "" // Corrected variable name
     @State private var navigateToNextScreen = false // State to control navigation
 
@@ -84,7 +84,7 @@ struct Frame21View: View {
         .cornerRadius(8)
         .padding(.top, 20)
         .background(
-            NavigationLink(destination: Frame22View(bloodSugarLevel: sugarLevel), isActive: $navigateToNextScreen) {
+            NavigationLink(destination: BloodSugarView2(bloodSugarLevel: sugarLevel), isActive: $navigateToNextScreen) {
                 EmptyView() // Invisible navigation link activated by the button
             }
         )
@@ -116,6 +116,6 @@ struct Frame21KeyButton: View {
 
 struct Frame21View_Previews: PreviewProvider {
     static var previews: some View {
-        Frame21View()
+        BloodSugarView1()
     }
 }

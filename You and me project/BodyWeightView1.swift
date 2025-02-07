@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct Fillinginformation6: View {
-    @State private var oxygenandpulse = ""
+struct BodyWeightView1: View {
+    @State private var weight = ""
 
     var body: some View {
         VStack {
@@ -20,12 +20,12 @@ struct Fillinginformation6: View {
                 .offset(y: -200)
 
             // Subtitle
-            Text("Oxygen & pulse")
+            Text("Weight")
                 .font(.headline)
                 .offset(y: -200)
 
             // Instructions
-            Text("Please enter your or the care receiver's oxygen and pulse")
+            Text("Please enter your or the care receiver's weight.")
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
@@ -33,10 +33,10 @@ struct Fillinginformation6: View {
 
             // Input Section
             VStack(spacing: 10) {
-                Text("OXYGEN & PULSE")
+                Text("WEIGHT")
                     .font(.headline)
 
-                TextField("Enter oxygen and pulse", text: $oxygenandpulse)
+                TextField("Enter weight", text: $weight)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.decimalPad) // Use numeric keyboard
                     .frame(width: 200)
@@ -64,7 +64,7 @@ struct Fillinginformation6: View {
             .offset(y: -100)
 
             // Next Button
-            NavigationLink(destination: Fillinginformation7(oxygenpulse: oxygenandpulse)) {
+            NavigationLink(destination: BodyWeightView2(bodyweight: weight)) {
                 Text("Next")
                     .foregroundColor(.white)
                     .frame(maxWidth: 150, maxHeight: 44)
@@ -108,15 +108,15 @@ struct Fillinginformation6: View {
     // Keypad Button Logic
     private func handleKeyPress(_ key: String) {
         if key == "Delete" {
-            if !oxygenandpulse.isEmpty {
-                oxygenandpulse.removeLast()
+            if !weight.isEmpty {
+                weight.removeLast()
             }
         } else {
-            oxygenandpulse += key
+            weight += key
         }
     }
 }
 
 #Preview {
-    Fillinginformation6()
+    BodyWeightView1()
 }

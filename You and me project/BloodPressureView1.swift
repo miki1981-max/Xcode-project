@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Fillinginformation4: View {
+struct BloodPressureView1: View {
     @State private var bloodpressure = ""
 
     var body: some View {
@@ -64,7 +64,7 @@ struct Fillinginformation4: View {
             .offset(y: -100)
 
             // Next Button
-            NavigationLink(destination: Fillinginformation5(pressure: bloodpressure)) {
+            NavigationLink(destination: BloodPressureView2(pressure: bloodpressure)) {
                 Text("Next")
                     .foregroundColor(.white)
                     .frame(maxWidth: 150, maxHeight: 44)
@@ -118,5 +118,5 @@ struct Fillinginformation4: View {
 }
 
 #Preview {
-    Fillinginformation4()
+    BloodPressureView1()
 }
