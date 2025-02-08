@@ -25,20 +25,44 @@ struct Survey12: View {
             
            
             VStack{
+                VStack {
+                    
+                    Text("1.What is your care receiver's name?")
+                        .padding()
+                        .padding(.leading,-40)
+                }
+                .frame(maxWidth: .infinity)
+                .background(Color.background)
                 
-                Text("1.What is your care receiver's name?")
-                    .padding()
+                
                 
                 TextField("", text:$name, prompt: Text("Enter your name")
                     .foregroundColor(Color.gray))
                 .padding(.horizontal,30)
-                .padding(.top,10)
+                .padding(.top)
+                VStack{
+                    
+                    Text("2.What is the care receiver's date of birth?")
+                        .padding()
+                }
+                .frame(maxWidth: .infinity)
+                .background(Color.background)
                 
+                TextField("", text:$care_reciever, prompt: Text("Enter the date")
+                    .foregroundColor(Color.gray))
+                    .padding(.horizontal,30)
+                    .padding(.top)
                 
+                VStack{
+                    
+                    Text("3.Choose the gender")
+                        .padding(.leading,-160)
+                        .padding()
+                    
+                }
+                .frame(maxWidth: .infinity)
+                .background(Color.background)
                 
-                Text("2.Choose the gender")
-                    .padding(.top,150)
-                    .padding(.leading,-130)
                
                 
                     
@@ -48,9 +72,10 @@ struct Survey12: View {
                 
                 
                 
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.background)
+            
+            
+            
+            
             
             
                 
@@ -68,18 +93,15 @@ struct Survey12: View {
                         
                     }
                     
-                    
-                    
-                    
                     .toolbar {
                         EditButton()
                     }
-                    
                 }
+            }
                 
-            
                 
-            NavigationLink(destination: Survey2()) {
+                
+            NavigationLink(destination: Survey3()) {
                 Text("Next")
                     .frame(width: 100.0, height:50)
                     .foregroundStyle(Color.white)

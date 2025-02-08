@@ -25,7 +25,6 @@
 		890B91312CFC83AF00309303 /* You_and_me_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890B91302CFC83AF00309303 /* You_and_me_projectUITests.swift */; };
 		890B91332CFC83AF00309303 /* You_and_me_projectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890B91322CFC83AF00309303 /* You_and_me_projectUITestsLaunchTests.swift */; };
 		898303AB2D54D1A3005B4BDF /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898303AA2D54D1A3005B4BDF /* WelcomePage.swift */; };
-		89B55A692D1F3CCB00C4EFB1 /* Survey2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B55A682D1F3CCB00C4EFB1 /* Survey2.swift */; };
 		89B55A6B2D273A2200C4EFB1 /* Fillinginformation1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B55A6A2D273A2100C4EFB1 /* Fillinginformation1.swift */; };
 		89C4EE592D4520C200181C54 /* Survey12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C4EE582D4520C200181C54 /* Survey12.swift */; };
 		89C4EE5E2D45526B00181C54 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 89C4EE5D2D45526B00181C54 /* FirebaseAnalytics */; };
@@ -87,7 +86,6 @@
 		890B91302CFC83AF00309303 /* You_and_me_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = You_and_me_projectUITests.swift; sourceTree = "<group>"; };
 		890B91322CFC83AF00309303 /* You_and_me_projectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = You_and_me_projectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		898303AA2D54D1A3005B4BDF /* WelcomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
-		89B55A682D1F3CCB00C4EFB1 /* Survey2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey2.swift; sourceTree = "<group>"; };
 		89B55A6A2D273A2100C4EFB1 /* Fillinginformation1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fillinginformation1.swift; sourceTree = "<group>"; };
 		89C4EE582D4520C200181C54 /* Survey12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey12.swift; sourceTree = "<group>"; };
 		89C4EE632D45570800181C54 /* Firebasecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebasecode.swift; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 				0A820AB52D4010F6002FB3D8 /* BloodSugarView2.swift */,
 				89E5D95D2D08C3F200B66090 /* GeneralinformationIView2.swift */,
 				89C4EE582D4520C200181C54 /* Survey12.swift */,
-				89B55A682D1F3CCB00C4EFB1 /* Survey2.swift */,
 				89E5D9672D0DB47600B66090 /* Survey3.swift */,
 				89D4750A2D01FBBF0000DB82 /* RegistrationView.swift */,
 				890B91192CFC83AF00309303 /* Assets.xcassets */,
@@ -388,7 +385,6 @@
 				A100EFFC2D53AB9F00112B6D /* BodyWeightView2.swift in Sources */,
 				A18CED102D40272B001DB433 /* RecommendationsView3.swift in Sources */,
 				89C4EE662D47C9FA00181C54 /* StartPageView.swift in Sources */,
-				89B55A692D1F3CCB00C4EFB1 /* Survey2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

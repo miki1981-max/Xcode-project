@@ -15,7 +15,7 @@ struct WelcomePage: View {
     ]
     
     var body: some View {
-           NavigationStack {
+           
                ZStack {
                    // Background color from assets
                    Color("Background").ignoresSafeArea()
@@ -108,7 +108,7 @@ struct WelcomePage: View {
                                                }
                                            }
                                        }
-                                   }
+                                   
 
                                    #Preview {
                                        WelcomePage()

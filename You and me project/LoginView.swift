@@ -42,6 +42,7 @@ struct LoginView: View {
             Text("Please,log in")
                 .font(.title)
                 .padding(.bottom,100)
+                
                 .navigationBarTitle("Profile",
                 displayMode:.inline)
 

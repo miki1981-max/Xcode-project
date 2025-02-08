@@ -33,8 +33,9 @@ struct GeneralinformationIView2: View {
                     .italic()
                     .foregroundColor(.blue)
                 
-                Text("This app is an efficient assistant in caring for elderly or sick persons. After the registration step, you need to complete a survey that consists of 5 questions. Your answers will help the app in making an appropriate care plan you can use in the future. Besides, the app includes such features as a calendar, reminder, symptom diary, and a library. All recommendations and articles are written by experts.")
+                Text("This app is an efficient assistant in caring for elderly or sick persons. After the registration step, you need to complete a survey that consists of 4 questions. Your answers will help the app in making an appropriate care plan you can use in the future. Besides, the app includes such features as a symptom diary and a library. All recommendations and articles are written by experts.")
                     .font(.body)
+                    
                     .navigationBarTitle("General information",
                                         displayMode:.inline)
                 
