@@ -8,115 +8,113 @@
 import SwiftUI
 
 struct BloodPressureView1: View {
-    @State private var bloodpressure = ""
-
+    @State private var systolicdata = ""
+    @State private var diastoloedata = ""
+    @State private var navigateToNextScreen = false // State to control navigation
+    
     var body: some View {
+        NavigationView {
+            ZStack {
+                backgroundView
+                contentStack
+            }
+            .navigationBarHidden(true) // Optionally hide the navigation bar
+        }
+    }
+    
+    private var backgroundView: some View {
+        Color("Background").ignoresSafeArea()
+    }
+
+    private var contentStack: some View {
         VStack {
-            // Title
-            Text("Diary")
-                .font(.largeTitle)
-                .bold()
-                .padding(.bottom, 10)
-                .offset(y: -200)
+            titleSection
+            inputSection
+            keypadSection
+            nextButton
+        }
+    }
 
-            // Subtitle
-            Text("Blood pressure")
-                .font(.headline)
-                .offset(y: -200)
-
-            // Instructions
-            Text("Please enter your or the care receiver's blood pressure.")
+    private var titleSection: some View {
+        VStack {
+            Text("Diary").font(.largeTitle).bold()
+            Text("Blood Pressure").font(.headline)
+            Text("Please enter your or the care receiver's blood pressure")
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
-                .offset(y: -180)
-
-            // Input Section
-            VStack(spacing: 10) {
-                Text("PRESSURE")
-                    .font(.headline)
-
-                TextField("Enter pressure", text: $bloodpressure)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.decimalPad) // Use numeric keyboard
-                    .frame(width: 200)
-
-                Text("°C")
-                    .font(.headline)
-            }
-            .offset(y: -150)
-
-            // Custom Keypad Section
-            VStack(spacing: 10) {
-                ForEach(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "Delete"], id: \.self) { key in
-                    Button(action: {
-                        handleKeyPress(key)
-                    }) {
-                        Text(key)
-                            .font(.title)
-                            .frame(width: 60, height: 60)
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(8)
-                            .padding(5)
-                    }
-                }
-            }
-            .offset(y: -100)
-
-            // Next Button
-            NavigationLink(destination: BloodPressureView2(pressure: bloodpressure)) {
-                Text("Next")
-                    .foregroundColor(.white)
-                    .frame(maxWidth: 150, maxHeight: 44)
-                    .background(Color.blue)
-                    .cornerRadius(8)
-            }
-            .padding(.top, 20)
-
-            Spacer()
-
-            // Bottom Navigation Icons
+        }.padding(.top, 20)
+    }
+    
+    private var inputSection: some View {
+        VStack {
             HStack {
-                Button(action: {
-                    // Handle action for first icon
-                }) {
-                    Image(systemName: "person.fill")
-                        .font(.title)
+                VStack {
+                    Text("Systolic")
+                    TextField("", text: $systolicdata)
+                        .keyboardType(.decimalPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 100)
+                    Text("mm Hg").font(.headline)
                 }
-                Spacer()
-                Button(action: {
-                    // Handle action for second icon
-                }) {
-                    Image(systemName: "pencil")
-                        .font(.title)
+                VStack {
+                    Text("Diastoloe")
+                    TextField("", text: $diastoloedata)
+                        .keyboardType(.decimalPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 100)
+                    Text("mm Hg").font(.headline)
                 }
-                Spacer()
-                Button(action: {
-                    // Handle action for third icon
-                }) {
-                    Image(systemName: "book.fill")
-                        .font(.title)
-                }
-            }
-            .padding(.horizontal, 40)
+            }.padding(.top, 20)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.white]), startPoint: .top, endPoint: .bottom))
-        .ignoresSafeArea()
+    }
+    
+    private var keypadSection: some View {
+        VStack(spacing: 10) {
+            keypadRow(keys: ["1", "2", "3"])
+            keypadRow(keys: ["4", "5", "6"])
+            keypadRow(keys: ["7", "8", "9"])
+            keypadRow(keys: ["C", "0", "⌫"])
+        }
     }
 
-    // Keypad Button Logic
-    private func handleKeyPress(_ key: String) {
-        if key == "Delete" {
-            if !bloodpressure.isEmpty {
-                bloodpressure.removeLast()
+    private func keypadRow(keys: [String]) -> some View {
+        HStack(spacing: 10) {
+            ForEach(keys, id: \.self) { key in
+                KeyButton(key: key, action: {
+                    handleKeyPress(key)
+                })
             }
-        } else {
-            bloodpressure += key
+        }
+    }
+    
+    private var nextButton: some View {
+        Button("Next") {
+            navigateToNextScreen = true // Trigger navigation
+        }
+        .foregroundColor(.white)
+        .frame(maxWidth: 150, maxHeight: 44)
+        .background(Color.blue)
+        .cornerRadius(8)
+        .padding(.top, 20)
+        .background(
+            NavigationLink(destination: BloodPressureView2(systolic: systolicdata, diastoloe: diastoloedata), isActive: $navigateToNextScreen) {
+                EmptyView() // Invisible navigation link activated by the button
+            }
+        )
+    }
+    
+    private func handleKeyPress(_ key: String) {
+        switch key {
+        case "⌫": systolicdata = String(systolicdata.dropLast())
+        case "C": systolicdata = ""
+        default: if systolicdata.count < 5 && key != "⌫" && key != "C" { systolicdata.append(key) }
         }
     }
 }
 
-#Preview {
-    BloodPressureView1()
+struct BloodPressureView1_Previews: PreviewProvider {
+    static var previews: some View {
+        BloodPressureView1()
+    }
 }
