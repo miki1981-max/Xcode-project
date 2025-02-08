@@ -11,6 +11,7 @@ struct Survey12: View {
     @State private var selection = Set<String>()
     
     @State private var  name = ""
+    @State private var care_reciever = ""
        
     let names = [
            "Male",
@@ -34,9 +35,12 @@ struct Survey12: View {
                 .padding(.top,10)
                 
                 
+                
                 Text("2.Choose the gender")
                     .padding(.top,150)
                     .padding(.leading,-130)
+               
+                
                     
                 
                 .navigationBarTitle("Survey",
