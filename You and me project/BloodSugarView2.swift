@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct BloodSugarView2: View {
-    var bloodSugarLevel: String = "4.5" // Example level, update as needed
-    @State private var currentTime: String = "" // To hold real-time
-    @State private var selectedMealTiming: String = "Before a meal" // Default timing
-    @State private var notice: String = "" // Notice input
+    @Binding var bloodSugarLevel: String
+    @State private var notice: String = ""
+    @State private var showConfirmation = false
+    @State private var currentTime: String = ""
+    @State private var selectedMealTiming: String = "Before a meal"  // Default option
 
     var body: some View {
         NavigationView {
