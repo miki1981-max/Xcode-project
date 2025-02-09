@@ -40,7 +40,7 @@ struct Frame23View: View {
                 .cornerRadius(8)
             }
             .padding(.top, 20)
-                       .padding(.horizontal, 20)
+            .padding(.horizontal, 20)
             .onAppear {
                 updateCurrentTime()
             }
@@ -94,4 +94,3 @@ struct Frame23View_Previews: PreviewProvider {
         Frame23View()
     }
 }
-

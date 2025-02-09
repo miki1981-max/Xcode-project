@@ -20,7 +20,7 @@ struct BloodSugarView1: View {
             .navigationBarHidden(true) // Optionally hide the navigation bar
         }
     }
-    
+  
     private var backgroundView: some View {
         Color("Background").ignoresSafeArea()
     }
@@ -44,7 +44,7 @@ struct BloodSugarView1: View {
                 .padding(.horizontal, 30)
         }.padding(.top, 20)
     }
-    
+
     private var inputSection: some View {
         VStack {
             TextField("Enter sugar level", text: $sugarLevel)
@@ -73,7 +73,7 @@ struct BloodSugarView1: View {
             }
         }
     }
-    
+  
     private var nextButton: some View {
         Button("Next") {
             navigateToNextScreen = true // Trigger navigation
@@ -83,8 +83,7 @@ struct BloodSugarView1: View {
         .background(Color.blue)
         .cornerRadius(8)
         .padding(.top, 20)
-        .background(
-            NavigationLink(destination: BloodSugarView2(bloodSugarLevel: $sugarLevel), isActive: $navigateToNextScreen) {
+        .background(NavigationLink(destination: BloodSugarView2(bloodSugarLevel: $sugarLevel), isActive: $navigateToNextScreen) {
                 EmptyView() // Invisible navigation link activated by the button
             }
         )

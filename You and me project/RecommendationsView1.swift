@@ -30,7 +30,7 @@ struct RecommendationsView1: View {
                             .fontWeight(.semibold)
                             .foregroundColor(Color.white)
                         
-                        NavigationLink(destination: Fillinginformation1()) {
+                        NavigationLink(destination: Frame24View()) {
                             Text("Comfort & safety")
                                 .padding()
                                 .font(.largeTitle)
@@ -44,7 +44,7 @@ struct RecommendationsView1: View {
                             .fontWeight(.semibold)
                             .foregroundColor(Color.white)
                         
-                        NavigationLink(destination: Fillinginformation1()) {
+                        NavigationLink(destination: Frame24View()) {
                             Text("Hygiene")
                                 .font(.largeTitle)
                         }
