@@ -14,74 +14,87 @@ struct BloodSugarView2: View {
     @State private var notice: String = "" // Notice input
 
     var body: some View {
-        VStack(spacing: 20) {
-            Text("Diary")
-                .font(.largeTitle)
-                .bold()
+        NavigationView {
+            VStack(spacing: 10) {
+                Text("Diary")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding(.top, 50)
 
-            Text("Blood sugar level is...")
-                .font(.title3)
+                VStack {
+                    Text("Your Blood Sugar level is")
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
 
-            Text(bloodSugarLevel + " mmol/L")
-                .font(.largeTitle)
-                .bold()
+                    Text(bloodSugarLevel)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.black)
+                        .padding(.vertical, 2)
 
-            HStack(spacing: 10) {
-                Text(currentTime)
-                    .font(.headline)
-                    .padding()
-                    .frame(minWidth: 100, idealWidth: 150, maxWidth: 200, maxHeight: 40)
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(8)
-
-                Button("TODAY") {
-                    // "Today" button action
+                    Text("mmol/L")
+                        .font(.subheadline)
                 }
-                .frame(minWidth: 100, idealWidth: 150, maxWidth: 200, maxHeight: 40)
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(8)
-            }
+                .padding(.vertical, 10)
 
-            Text("When was this sugar level measured?")
-                .font(.subheadline)
-                .multilineTextAlignment(.center)
+                HStack {
+                    Text(currentTime)
+                        .font(.headline)
+                        .padding()
+                        .frame(width: 120, height: 40)
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
 
-            VStack(alignment: .leading, spacing: 10) {
-                ForEach(["Before a meal", "After a meal", "Fasting blood sugar", "Bedtime blood sugar"], id: \.self) { timing in
-                    Button(action: {
-                        selectedMealTiming = timing
-                    }) {
-                        HStack {
-                            Image(systemName: selectedMealTiming == timing ? "checkmark.circle.fill" : "circle")
-                                .foregroundColor(selectedMealTiming == timing ? .blue : .gray)
-                            Text(timing)
-                        }
+                    Button("TODAY") {
+                        updateCurrentTime()
                     }
-                    .padding(.vertical, 5)
+                    .foregroundColor(.white)
+                    .frame(width: 120, height: 40)
+                    .background(Color.blue)
+                    .cornerRadius(8)
                 }
+                .padding(.vertical, 10)
+
+                Text("When was this sugar level measured?")
+                    .font(.headline) // Increased font size
+                    .multilineTextAlignment(.center)
+                    .padding(.vertical, 5)
+
+                mealTimingOptions()
+
+                TextField("Enter notice", text: $notice)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.horizontal)
+
+                Button("Save") {
+                    saveInformation()
+                    showConfirmation = true
+                }
+                .alert(isPresented: $showConfirmation) {
+                    Alert(title: Text("Saved"), message: Text("Your information has been saved."), dismissButton: .default(Text("OK")))
+                }
+                .foregroundColor(.white)
+                .frame(width: 150, height: 44)
+                .background(Color.blue)
+                .cornerRadius(8)
+                .padding(.top, 20)
+
+                NavigationLink(destination: Frame23View()) {
+                    Text("Next")
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, maxHeight: 44)
+                        .background(Color.green)
+                        .cornerRadius(8)
+                }
+                .padding(.bottom, 20)
             }
-
-            TextField("Enter notice", text: $notice)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .frame(width: 250)
-
-            Button("Save & Next") {
-                saveInformation()
+            .padding(.horizontal, 20)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("Background"))
+            .ignoresSafeArea()
+            .onAppear {
+                updateCurrentTime()
             }
-            .frame(maxWidth: 150, maxHeight: 44)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(8)
-
-        }
-        .padding(.horizontal, 20)
-        .padding(.top, 20)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Background")) // Ensure Color set as in Frame 20
-        .ignoresSafeArea()
-        .onAppear {
-            updateCurrentTime()
         }
     }
 
@@ -92,20 +105,33 @@ struct BloodSugarView2: View {
     }
 
     private func saveInformation() {
-        let savedData: [String: Any] = [
-            "bloodSugarLevel": bloodSugarLevel,
-            "mealTiming": selectedMealTiming,
-            "notice": notice,
-            "time": currentTime
-        ]
-        UserDefaults.standard.set(savedData, forKey: "Frame22Data")
-        print("Data saved successfully!")
+        UserDefaults.standard.set(bloodSugarLevel, forKey: "savedBloodSugarLevel")
+        UserDefaults.standard.set(notice, forKey: "savedNotice")
+    }
+
+    private func mealTimingOptions() -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            ForEach(["Before a meal", "After a meal", "Fasting blood sugar", "Bedtime blood sugar"], id: \.self) { timing in
+                Button(action: {
+                    self.selectedMealTiming = timing
+                }) {
+                    HStack {
+                        Image(systemName: selectedMealTiming == timing ? "checkmark.circle.fill" : "circle")
+                            .foregroundColor(selectedMealTiming == timing ? .blue : .gray)
+                        Text(timing)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue.opacity(0.15))
+                    .cornerRadius(8)
+                }
+            }
+        }
     }
 }
 
 struct Frame22View_Previews: PreviewProvider {
     static var previews: some View {
-        BloodSugarView2()
+        BloodSugarView2(bloodSugarLevel: .constant("4.5"))
     }
 }
-
