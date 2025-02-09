@@ -60,7 +60,7 @@ struct Fillinginformation1: View {
                     .fontWeight(.medium)
                     .cornerRadius(10)
                         
-                    NavigationLink(destination: Frame21View()) {
+                    NavigationLink(destination: BloodSugarView1()) {
                         Text("Sugar level                  ")
                         Circle().stroke(lineWidth: 4).frame(width:33, height:33)
                             .overlay(Text("➕"))
