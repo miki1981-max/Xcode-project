@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Frame21View: View {
-    @State private var sugarLevel = "" // Corrected variable name
+    @State private var sugarLevel = "" // Store sugar level as a string
     @State private var navigateToNextScreen = false // State to control navigation
 
     var body: some View {
@@ -20,7 +20,7 @@ struct Frame21View: View {
             .navigationBarHidden(true) // Optionally hide the navigation bar
         }
     }
-    
+
     private var backgroundView: some View {
         Color("Background").ignoresSafeArea()
     }
@@ -44,17 +44,17 @@ struct Frame21View: View {
                 .padding(.horizontal, 30)
         }.padding(.top, 20)
     }
-    
+
     private var inputSection: some View {
         VStack {
-            TextField("Enter sugar level", text: $sugarLevel) // Corrected property
+            TextField("Enter sugar level", text: $sugarLevel)
                 .keyboardType(.decimalPad)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width: 150)
-            Text("mg/dL").font(.headline) // Changed from "°C" to "mg/dL" for blood sugar
+            Text("mg/dL").font(.headline)
         }.padding(.top, 20)
     }
-    
+
     private var keypadSection: some View {
         VStack(spacing: 10) {
             keypadRow(keys: ["1", "2", "3"])
@@ -73,7 +73,7 @@ struct Frame21View: View {
             }
         }
     }
-    
+
     private var nextButton: some View {
         Button("Next") {
             navigateToNextScreen = true // Trigger navigation
@@ -84,7 +84,7 @@ struct Frame21View: View {
         .cornerRadius(8)
         .padding(.top, 20)
         .background(
-            NavigationLink(destination: Frame22View(bloodSugarLevel: sugarLevel), isActive: $navigateToNextScreen) {
+            NavigationLink(destination: Frame22View(bloodSugarLevel: $sugarLevel), isActive: $navigateToNextScreen) {
                 EmptyView() // Invisible navigation link activated by the button
             }
         )
