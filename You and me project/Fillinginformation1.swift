@@ -70,7 +70,7 @@ struct Fillinginformation1: View {
                     .fontWeight(.medium)
                     .cornerRadius(10)
                         
-                    NavigationLink(destination: BloodSugarView1()) {
+                    NavigationLink(destination: Frame21View()) {
                         Text("Sugar level                  ")
                         Circle()
                             .stroke(lineWidth: 4)
