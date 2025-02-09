@@ -24,7 +24,7 @@ struct Survey12: View {
         VStack{
             
            
-            VStack{
+            VStack {
                 VStack {
                     
                     Text("1.What is your care receiver's name?")
@@ -37,9 +37,14 @@ struct Survey12: View {
                 
                 
                 TextField("", text:$name, prompt: Text("Enter your name")
-                    .foregroundColor(Color.gray))
+                    
+                          .foregroundColor(Color.gray))
+                
+                
+                  
                 .padding(.horizontal,30)
                 .padding(.top)
+                
                 VStack{
                     
                     Text("2.What is the care receiver's date of birth?")
