@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Frame22View: View {
+struct BloodSugarView2: View {
     @Binding var bloodSugarLevel: String
     @State private var notice: String = ""
     @State private var showConfirmation = false
@@ -133,6 +133,6 @@ struct Frame22View: View {
 
 struct Frame22View_Previews: PreviewProvider {
     static var previews: some View {
-        Frame22View(bloodSugarLevel: .constant("4.5"))
+        BloodSugarView2(bloodSugarLevel: .constant("4.5"))
     }
 }
