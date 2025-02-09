@@ -5,38 +5,44 @@
 //  Created by Kamila Ponomarova on 2024-12-01.
 //
 import SwiftUI
+
+import Firebase
 import FirebaseAuth
 
-struct ContentView: View {
+struct ContentView:View
+{
     
     @State var isLoggedIn : Bool?
+    
+    var body: some View {
         
-        var body: some View {
-          
-            VStack {
-                if isLoggedIn == true {
-                    GeneralinformationIView2()
-                }
-                if isLoggedIn == false {
-                    StartPageView()
-                }
+        VStack {
+            if isLoggedIn == true {
+                GeneralinformationIView2()
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .onAppear() {
-                Auth.auth().addStateDidChangeListener { auth, user in
-                    print("USER CHANGE")
-                    
-                    if Auth.auth().currentUser == nil {
-                        isLoggedIn = false
-                    } else {
-                        isLoggedIn = true
-                    }
+            if isLoggedIn == false {
+                StartPageView()
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onAppear() {
+            Auth.auth().addStateDidChangeListener { auth, user in
+                print("USER CHANGE")
+                
+                if Auth.auth().currentUser == nil {
+                    isLoggedIn = false
+                } else {
+                    isLoggedIn = true
                 }
             }
         }
-    
+    }
 }
 
 #Preview {
-    ContentView() // interface
+    ContentView()
 }
+
+
+    
+

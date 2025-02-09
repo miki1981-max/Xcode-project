@@ -11,10 +11,11 @@ struct Survey12: View {
     @State private var selection = Set<String>()
     
     @State private var  name = ""
+    @State private var care_reciever = ""
        
     let names = [
-           "Mail",
-           "Femail",
+           "Male",
+           "Female",
            
     
        ]
@@ -24,18 +25,67 @@ struct Survey12: View {
             
            
             VStack{
-                Text("1.What is your care receiver's name?")
-                    .padding()
+                VStack {
+                    
+                    Text("1.What is your care receiver's name?")
+                        .padding()
+                        .padding(.leading,-40)
+                }
+                .frame(maxWidth: .infinity)
+                .background(Color.background)
+                
+                
                 
                 TextField("", text:$name, prompt: Text("Enter your name")
                     .foregroundColor(Color.gray))
+                .padding(.horizontal,30)
+                .padding(.top)
+                VStack{
+                    
+                    Text("2.What is the care receiver's date of birth?")
+                        .padding()
+                }
+                .frame(maxWidth: .infinity)
+                .background(Color.background)
                 
+                TextField("", text:$care_reciever, prompt: Text("Enter the date")
+                    .foregroundColor(Color.gray))
                     .padding(.horizontal,30)
-                    .padding(.top,10)
-                    .navigationBarTitle("Survey",
-                        displayMode:.inline)
+                    .padding(.top)
+                
+                VStack{
+                    
+                    Text("3.Choose the gender")
+                        .padding(.leading,-160)
+                        .padding()
+                    
+                }
+                .frame(maxWidth: .infinity)
+                .background(Color.background)
+                
+               
+                
+                    
+                
+                .navigationBarTitle("Survey",
+                                    displayMode:.inline)
                 
                 
+                
+            
+            
+            
+            
+            
+            
+                
+                
+                    
+                        
+                        
+                        
+                        
+            
                 NavigationStack {
                     
                     List(names, id: \.self, selection: $selection) { name in
@@ -43,16 +93,25 @@ struct Survey12: View {
                         
                     }
                     
-                    
-                                        .navigationTitle("2.Choose the gender")
-                                                            
                     .toolbar {
                         EditButton()
                     }
-                    
                 }
-                
             }
+                
+                
+                
+            NavigationLink(destination: Survey3()) {
+                Text("Next")
+                    .frame(width: 100.0, height:50)
+                    .foregroundStyle(Color.white)
+                    .padding()
+                    .background(Color.background)
+                    .cornerRadius(10)
+            }
+                
+                
+            
             
         }
         

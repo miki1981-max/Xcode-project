@@ -1,5 +1,5 @@
 //
-//  Frame21View .swift
+//  Frame19View.swift
 //  You and me project
 //
 //  Created by Kaukab Farrukh on 2025-01-21.
@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct BloodSugarView1: View {
-    @State private var sugarLevel = "" // Store sugar level as a string
+struct OxygenPulseView1: View {
+    @State private var oxygendata = ""
+    @State private var pulsedata = ""
     @State private var navigateToNextScreen = false // State to control navigation
-
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -20,7 +21,7 @@ struct BloodSugarView1: View {
             .navigationBarHidden(true) // Optionally hide the navigation bar
         }
     }
-  
+    
     private var backgroundView: some View {
         Color("Background").ignoresSafeArea()
     }
@@ -37,22 +38,35 @@ struct BloodSugarView1: View {
     private var titleSection: some View {
         VStack {
             Text("Diary").font(.largeTitle).bold()
-            Text("Blood Sugar Level").font(.headline)
-            Text("Please enter your or the care receiver's blood sugar level")
+            Text("Oxygen and pulse").font(.headline)
+            Text("Please enter your or the care receiver's oygen saturation data and pulse")
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
         }.padding(.top, 20)
     }
-
+    
     private var inputSection: some View {
         VStack {
-            TextField("Enter sugar level", text: $sugarLevel)
-                .keyboardType(.decimalPad)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .frame(width: 150)
-            Text("mg/dL").font(.headline) // Changed from "°C" to "mg/dL" for blood sugar
-        }.padding(.top, 20)
+            HStack {
+                VStack {
+                    Text("Sp02")
+                    TextField("", text: $oxygendata)
+                        .keyboardType(.decimalPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 100)
+                    Text("%").font(.headline)
+                }
+                VStack {
+                    Text("Pulse")
+                    TextField("", text: $pulsedata)
+                        .keyboardType(.decimalPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 100)
+                    Text("per minute").font(.headline)
+                }
+            }.padding(.top, 20)
+        }
     }
     
     private var keypadSection: some View {
@@ -73,7 +87,7 @@ struct BloodSugarView1: View {
             }
         }
     }
-  
+    
     private var nextButton: some View {
         Button("Next") {
             navigateToNextScreen = true // Trigger navigation
@@ -83,7 +97,8 @@ struct BloodSugarView1: View {
         .background(Color.blue)
         .cornerRadius(8)
         .padding(.top, 20)
-        .background(NavigationLink(destination: BloodSugarView2(bloodSugarLevel: $sugarLevel), isActive: $navigateToNextScreen) {
+        .background(
+            NavigationLink(destination: OxygenPulseView2(oxygen: oxygendata, value2: "", pulse: pulsedata), isActive: $navigateToNextScreen) {
                 EmptyView() // Invisible navigation link activated by the button
             }
         )
@@ -91,30 +106,15 @@ struct BloodSugarView1: View {
     
     private func handleKeyPress(_ key: String) {
         switch key {
-        case "⌫": sugarLevel = String(sugarLevel.dropLast())
-        case "C": sugarLevel = ""
-        default: if sugarLevel.count < 5 && key != "⌫" && key != "C" { sugarLevel.append(key) }
+        case "⌫": oxygendata = String(oxygendata.dropLast())
+        case "C": oxygendata = ""
+        default: if oxygendata.count < 5 && key != "⌫" && key != "C" { oxygendata.append(key) }
         }
     }
 }
 
-struct Frame21KeyButton: View {
-    var key: String
-    var action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            Text(key)
-                .font(.title)
-                .frame(width: 60, height: 60)
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-        }
-    }
-}
-
-struct Frame21View_Previews: PreviewProvider {
+struct OxygenPulseView1_Previews: PreviewProvider {
     static var previews: some View {
-        BloodSugarView1()
+        OxygenPulseView1()
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Fillinginformation1: View {
+    @State private var ShowAlert = true
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -16,9 +18,11 @@ struct Fillinginformation1: View {
                     .fontWeight(.heavy)
                     .navigationBarTitle("")
                 VStack(alignment: .leading) {
-                    NavigationLink(destination: Fillinginformation1()) {
+                    NavigationLink(destination: BodyWeightView1()) {
                         Text("Weight                         ")
-                        Circle().stroke(lineWidth: 4).frame(width:33, height:33)
+                        Circle()
+                            .stroke(lineWidth: 4)
+                            .frame(width: 33, height: 33)
                             .overlay(Text("➕"))
                     }
                     .padding()
@@ -27,9 +31,11 @@ struct Fillinginformation1: View {
                     .fontWeight(.medium)
                     .cornerRadius(15)
                         
-                    NavigationLink(destination: Fillinginformation1()) {
+                    NavigationLink(destination: BloodPressureView1()) {
                         Text("Pressure                     ")
-                        Circle().stroke(lineWidth: 4).frame(width:33, height:33)
+                        Circle()
+                            .stroke(lineWidth: 4)
+                            .frame(width: 33, height: 33)
                             .overlay(Text("➕"))
                     }
                     .padding()
@@ -38,9 +44,11 @@ struct Fillinginformation1: View {
                     .fontWeight(.medium)
                     .cornerRadius(10)
                         
-                    NavigationLink(destination: Fillinginformation1()) {
+                    NavigationLink(destination: OxygenPulseView1()) {
                         Text("Oxygen & pulse         ")
-                        Circle().stroke(lineWidth: 4).frame(width:33, height:33)
+                        Circle()
+                            .stroke(lineWidth: 4)
+                            .frame(width: 33, height: 33)
                             .overlay(Text("➕"))
                     }
                     .padding()
@@ -51,7 +59,9 @@ struct Fillinginformation1: View {
                         
                     NavigationLink(destination:BodyTemperatureView ()) {
                         Text("Body temperature     ")
-                        Circle().stroke(lineWidth: 4).frame(width:33, height:33)
+                        Circle()
+                            .stroke(lineWidth: 4)
+                            .frame(width: 33, height: 33)
                             .overlay(Text("➕"))
                     }
                     .padding()
@@ -62,7 +72,9 @@ struct Fillinginformation1: View {
                         
                     NavigationLink(destination: BloodSugarView1()) {
                         Text("Sugar level                  ")
-                        Circle().stroke(lineWidth: 4).frame(width:33, height:33)
+                        Circle()
+                            .stroke(lineWidth: 4)
+                            .frame(width: 33, height: 33)
                             .overlay(Text("➕"))
                     }
                     .padding()
@@ -76,6 +88,10 @@ struct Fillinginformation1: View {
                 .frame(maxWidth: 800, maxHeight: 900)
                 .background(Color.background)
             }
+            .alert(isPresented: $ShowAlert) {
+                Alert(title: Text("NOTICE"), message: Text("The information your specify about yourself or your care receiver in these fields will be saved for the purposes of determining optimal procedures of care."), dismissButton: .default(Text("OK")))
+            }
+            
         }
         .background(Color.background)
     }
