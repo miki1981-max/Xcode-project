@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BloodSugarView1: View {
-    @State private var sugarLevel = "" // Corrected variable name
+    @State private var sugarLevel = "" // Store sugar level as a string
     @State private var navigateToNextScreen = false // State to control navigation
 
     var body: some View {
@@ -47,7 +47,7 @@ struct BloodSugarView1: View {
     
     private var inputSection: some View {
         VStack {
-            TextField("Enter sugar level", text: $sugarLevel) // Corrected property
+            TextField("Enter sugar level", text: $sugarLevel)
                 .keyboardType(.decimalPad)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width: 150)
