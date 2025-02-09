@@ -84,7 +84,7 @@ struct BloodSugarView1: View {
         .cornerRadius(8)
         .padding(.top, 20)
         .background(
-            NavigationLink(destination: BloodSugarView2(bloodSugarLevel: sugarLevel), isActive: $navigateToNextScreen) {
+            NavigationLink(destination: BloodSugarView2(bloodSugarLevel: $sugarLevel), isActive: $navigateToNextScreen) {
                 EmptyView() // Invisible navigation link activated by the button
             }
         )
