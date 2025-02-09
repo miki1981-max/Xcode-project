@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BloodSugarView1: View {
+struct Frame21View: View {
     @State private var sugarLevel = "" // Store sugar level as a string
     @State private var navigateToNextScreen = false // State to control navigation
 
@@ -20,7 +20,6 @@ struct BloodSugarView1: View {
             .navigationBarHidden(true) // Optionally hide the navigation bar
         }
     }
-  
     private var backgroundView: some View {
         Color("Background").ignoresSafeArea()
     }
@@ -51,10 +50,10 @@ struct BloodSugarView1: View {
                 .keyboardType(.decimalPad)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width: 150)
-            Text("mg/dL").font(.headline) // Changed from "°C" to "mg/dL" for blood sugar
+            Text("mg/dL").font(.headline)
         }.padding(.top, 20)
     }
-    
+
     private var keypadSection: some View {
         VStack(spacing: 10) {
             keypadRow(keys: ["1", "2", "3"])
@@ -73,7 +72,7 @@ struct BloodSugarView1: View {
             }
         }
     }
-  
+
     private var nextButton: some View {
         Button("Next") {
             navigateToNextScreen = true // Trigger navigation
@@ -83,7 +82,10 @@ struct BloodSugarView1: View {
         .background(Color.blue)
         .cornerRadius(8)
         .padding(.top, 20)
-        .background(NavigationLink(destination: BloodSugarView2(bloodSugarLevel: $sugarLevel), isActive: $navigateToNextScreen) {
+        .background(
+            
+            NavigationLink(destination: Frame22View(bloodSugarLevel: $sugarLevel), isActive: $navigateToNextScreen) {
+
                 EmptyView() // Invisible navigation link activated by the button
             }
         )
@@ -115,6 +117,6 @@ struct Frame21KeyButton: View {
 
 struct Frame21View_Previews: PreviewProvider {
     static var previews: some View {
-        BloodSugarView1()
+        Frame21View()
     }
 }
