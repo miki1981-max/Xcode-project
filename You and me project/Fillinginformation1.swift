@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Fillinginformation1: View {
+    @State private var ShowAlert = true
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -68,7 +70,7 @@ struct Fillinginformation1: View {
                     .fontWeight(.medium)
                     .cornerRadius(10)
                         
-                    NavigationLink(destination: BloodSugarView1()) {
+                    NavigationLink(destination: Frame21View()) {
                         Text("Sugar level                  ")
                         Circle()
                             .stroke(lineWidth: 4)
@@ -86,6 +88,10 @@ struct Fillinginformation1: View {
                 .frame(maxWidth: 800, maxHeight: 900)
                 .background(Color.background)
             }
+            .alert(isPresented: $ShowAlert) {
+                Alert(title: Text("NOTICE"), message: Text("The information your specify about yourself or your care receiver in these fields will be saved for the purposes of determining optimal procedures of care."), dismissButton: .default(Text("OK")))
+            }
+            
         }
         .background(Color.background)
     }

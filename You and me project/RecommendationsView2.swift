@@ -16,7 +16,7 @@ struct RecommendationsView2: View {
                     .fontWeight(.heavy)
                     .navigationBarTitle(Text("Page 2"), displayMode:.inline)
                     VStack {
-                        NavigationLink(destination: Fillinginformation1()) {
+                        NavigationLink(destination: Frame25View()) {
                             Text("Intimate hygiene")
                                 .font(.largeTitle)
                         }
@@ -30,7 +30,7 @@ struct RecommendationsView2: View {
                             .foregroundColor(Color.white)
                             .padding()
                         
-                        NavigationLink(destination: Fillinginformation1()) {
+                        NavigationLink(destination: Frame25View()) {
                             Text("Taking medication")
                                 .font(.largeTitle)
                         }
