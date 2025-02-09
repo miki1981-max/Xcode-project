@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Frame21View: View {
+struct BloodSugarView1: View {
     @State private var sugarLevel = "" // Store sugar level as a string
     @State private var navigateToNextScreen = false // State to control navigation
 
@@ -116,6 +116,6 @@ struct Frame21KeyButton: View {
 
 struct Frame21View_Previews: PreviewProvider {
     static var previews: some View {
-        Frame21View()
+        BloodSugarView1()
     }
 }
