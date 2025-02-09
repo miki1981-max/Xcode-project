@@ -17,7 +17,7 @@ struct Frame23View: View {
     @State private var oxygen: Int = 50
     @State private var pulse: Int = 80
     @State private var temperature: Float = 37
-    @State private var sugarLevel: Float = 30
+    @State private var sugarLevel: Float = UserDefaults.standard.float(forKey: "savedBloodSugarLevel")
 
     var body: some View {
         VStack{
@@ -32,7 +32,6 @@ struct Frame23View: View {
                 Spacer()
 
                 Button("TODAY") {
-                    // "Today" button action
                     updateCurrentTime()
                 }
                 .frame(maxWidth: 100, maxHeight: 40)
@@ -42,12 +41,9 @@ struct Frame23View: View {
             }
             .padding(.top, 20)
                        .padding(.horizontal, 20)
-                       
-                       Spacer().frame(height: 30)
-                       .onAppear {
-                           updateCurrentTime()
-                       }
-            
+            .onAppear {
+                updateCurrentTime()
+            }
 
             VStack(spacing: 10) {
                 Group {
@@ -67,7 +63,7 @@ struct Frame23View: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Background")) // Adjust this to use the correct color
+        .background(Color("Background"))
         .ignoresSafeArea()
     }
 
