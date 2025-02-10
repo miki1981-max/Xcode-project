@@ -6,103 +6,112 @@
 //
 
 import SwiftUI
-import FirebaseCore
 import FirebaseAuth
-
 
 struct SecureTextField: View {
     @State private var isSecureField: Bool = true
     @Binding var text: String
+    
     var body: some View {
         HStack {
             if isSecureField {
-                SecureField("Password",text:$text)
+                SecureField("Password", text: $text)
+                    .padding()
             } else {
-                TextField(text,text: $text)
+                TextField("Password", text: $text)
+                    .padding()
             }
-        }.overlay(alignment:.trailing){
-            Image(systemName: isSecureField ? "eye.slash": "eye")
-                .onTapGesture {
-                    isSecureField.toggle()
-                }
+            
+            // Toggle visibility icon
+            Button(action: {
+                isSecureField.toggle()
+            }) {
+                Image(systemName: isSecureField ? "eye.slash" : "eye")
+                    .foregroundColor(.gray)
+            }
         }
-        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(8)
     }
+}
+
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @State private var isLoggedIn = false
+    @State private var showError = false
     
-    @State var firebase =  Firebasecode()
+    @State var firebase = Firebasecode()
     
     var body: some View {
-
-        VStack {
-            Spacer()
-            
-            Text("Please,log in")
-                .font(.title)
-                .padding(.bottom,100)
+        NavigationStack {
+            ZStack {
+                Color("Background")
+                    .ignoresSafeArea()
                 
-                .navigationBarTitle("Profile",
-                displayMode:.inline)
-
-            
-            TextField("", text:$email, prompt: Text("Enter your e-mail")
-                .foregroundColor(Color.gray))
-                .padding(.horizontal,30)
-                .padding(.bottom,30)
-            
-            SecureTextField(text:$password)
-                .padding(.horizontal,30)
-                .padding(.bottom,30)
-                            
+                VStack(spacing: 20) {
+                    Spacer()
+                    
+                    // Title
+                    Text("Please, log in")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.black)
+                    
+                    
+                    TextField("Enter your e-mail", text: $email)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        .padding(.horizontal, 30)
+                    
                 
-                
-            
-        
-            
-           
-            
-                
-                
-            
-           
-            
-            
-            
-            
-            
-            Button( action: {
-                Task {
-                    firebase.userLogin (email: email, password: password)
+                    SecureTextField(text: $password)
+                        .padding(.horizontal, 30)
+                    
+                    // Show error message if login fails
+                    if showError, let error = firebase.loginerror {
+                        Text(error)
+                            .foregroundColor(.red)
+                            .font(.subheadline)
+                            .padding(.horizontal, 30)
+                    }
+                    
+                    // Log In Button
+                    Button(action: {
+                        firebase.userLogin(email: email, password: password)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Simulate login delay
+                            if firebase.loginerror == nil {
+                                isLoggedIn = true
+                            } else {
+                                showError = true
+                            }
+                        }
+                    }) {
+                        Text("Log in")
+                            .font(.headline)
+                            .foregroundColor(.blue)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal, 30)
+                    }
+                    
+                    Spacer()
+                    
+                    // Navigation to next screen
+                    NavigationLink("", destination: RecommendationsView1(), isActive: $isLoggedIn)
+                        .hidden()
                 }
-                
-            }) {
-
-                Text("Log in")
-                    .frame(width:100.0,height:50)
-                    .foregroundStyle(Color.blue)
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(10)
-
-              
+                .padding(.top, 50)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.background)
-            
-
-            
-            }
-        
-            
-
         }
-    
-        
     }
+}
 
-
+// Preview
 #Preview {
     LoginView()
 }

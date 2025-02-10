@@ -16,6 +16,7 @@ struct Survey12: View {
     var body: some View {
         NavigationView {
             Form {
+                
                 Section(header: Text("Survey")) {
                     VStack(alignment: .leading, spacing: 20) {
                         Text("What is your care receiver's name?")
@@ -56,6 +57,7 @@ struct Survey12: View {
                     }
                 }
             }
+            
             .navigationBarTitle("Survey 12", displayMode: .inline)
             .background(Color("Background").ignoresSafeArea())
         }
