@@ -65,7 +65,9 @@ struct LoginView: View {
                         .background(Color.white)
                         .cornerRadius(8)
                         .padding(.horizontal, 30)
-                    
+                        
+                        .navigationBarTitle("Profile",
+                                            displayMode:.inline)
                 
                     SecureTextField(text: $password)
                         .padding(.horizontal, 30)

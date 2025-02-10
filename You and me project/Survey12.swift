@@ -19,15 +19,15 @@ struct Survey12: View {
                 
                 Section(header: Text("Survey")) {
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("What is your care receiver's name?")
+                        Text("1.What is your care receiver's name?")
                         TextField("", text: $name)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
 
-                        Text("What is the care receiver's date of birth?")
+                        Text("2.What is the care receiver's date of birth?")
                         DatePicker("", selection: $dateOfBirth, displayedComponents: .date)
                             .datePickerStyle(GraphicalDatePickerStyle())
 
-                        Text("Choose your gender:")
+                        Text("3.Choose your gender:")
                         Picker("Gender", selection: $gender) {
                             Text("Male").tag("Male")
                             Text("Female").tag("Female")
@@ -39,6 +39,7 @@ struct Survey12: View {
                     Button("Save") {
                         saveData()
                         showAlert = true
+                        
                     }
                     .alert(isPresented: $showAlert) {
                         Alert(title: Text("Saved"), message: Text("Your information has been saved."), dismissButton: .default(Text("OK")))
@@ -58,7 +59,7 @@ struct Survey12: View {
                 }
             }
             
-            .navigationBarTitle("Survey 12", displayMode: .inline)
+            .navigationBarTitle("Survey 1", displayMode: .inline)
             .background(Color("Background").ignoresSafeArea())
         }
     }

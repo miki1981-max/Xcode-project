@@ -46,7 +46,7 @@ struct Survey3: View {
                     .font(.headline)
                     .padding(.top,70)
                     .padding(.leading,-50)
-                    .navigationBarTitle("Survey",
+                    .navigationBarTitle("Survey 2",
                     displayMode:.inline)
                 List{
                     ForEach($items,id:\.name){
