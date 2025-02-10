@@ -8,37 +8,72 @@
 import SwiftUI
 
 struct Frame26View: View {
+    @State private var selectedCategory: String? // Tracks the selected category
+
     var body: some View {
-        VStack {
-            Text("Library")
-                .font(.title)
-                .bold()
-                .padding(.top, 140)  // Increased padding for better alignment at the top
+        NavigationStack {
+            VStack {
+                // Title
+                Text("Library")
+                    .font(.title)
+                    .bold()
+                    .padding(.top, 100)
 
-            Text("Here you can find links to helpful articles on caring for elderly or sick persons.")
-                .font(.body)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 20)
-                .padding(.top, 60)  // Added some top padding for spacing
+                // Description
+                Text("Here you can find links to helpful articles on caring for elderly or sick persons.")
+                    .font(.body)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 50)
 
-            // Buttons for different categories
-            Spacer(minLength: 50)  // Adds spacing before the buttons
+                Spacer(minLength: 50)
 
-            Button("Nutrition") {
-                // Navigation action or function here
+                // Navigation Button for "Comfort and Safety"
+                NavigationLink(
+                    destination: LinksListView3(category: "Nutrition", links: nutritionLinks),
+                    tag: "Nutrition",
+                    selection: $selectedCategory
+                ) {
+                    Button("Nutrition") {
+                        selectedCategory = "Nutrition"
+                    }
+                    .buttonStyle(Frame26ButtonStyle())
+                }
+
+                // Navigation Button for "Hygiene"
+                NavigationLink(
+                    destination: LinksListView3(category: "Benefits of Walking", links: benefitsofwalkingLinks),
+                    tag: "Benefits of Walking",
+                    selection: $selectedCategory
+                ) {
+                    Button("Benefits of Walking") {
+                        selectedCategory = "Benefits of Walking"
+                    }
+                    .buttonStyle(Frame26ButtonStyle())
+                }
+
+                Spacer()
             }
-            .buttonStyle(Frame26ButtonStyle())
-
-            Button("Benefits of Walking") {
-                // Navigation action or function here
-            }
-            .buttonStyle(Frame26ButtonStyle())
-
-            Spacer()  // Pushes everything up
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("Background"))
+            .ignoresSafeArea()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Background"))  // Ensure this matches your asset name
-        .ignoresSafeArea()
+    }
+
+    
+    private var nutritionLinks: [String] {
+        [
+            "https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet/healthy-meal-planning-tips-older-adults",
+            "https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet/how-read-food-and-beverage-labels"
+        ]
+    }
+
+    
+    private var benefitsofwalkingLinks: [String] {
+        [
+            "https://www.nia.nih.gov/health/exercise-and-physical-activity/real-life-benefits-exercise-and-physical-activity",
+            "https://www.nia.nih.gov/news/leisure-activities-may-improve-longevity-older-adults"
+        ]
     }
 }
 
