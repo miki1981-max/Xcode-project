@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RecommendationsView1: View {
+    @State private var firebase = Firebasecode()
     var body: some View {
         NavigationView {
             VStack {
