@@ -69,14 +69,22 @@ struct OxygenPulseView2: View {
             .background(Color.blue)
             .cornerRadius(8)
             .padding(.top, 20)
+
+            NavigationLink(destination: Frame23View()) {
+                Text("Next")
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, maxHeight: 44)
+                    .background(Color.green)
+                    .cornerRadius(8)
+            }
+            .padding(.bottom, 20)
         }
         .padding(.horizontal, 20)
-        .padding(.top, 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Background")) // Make sure your asset color is called "Background"
+        .background(Color("Background"))
         .ignoresSafeArea()
         .onAppear {
-            updateCurrentTime() // Update time on screen load
+            updateCurrentTime()
         }
     }
 
