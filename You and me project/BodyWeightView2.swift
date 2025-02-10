@@ -11,6 +11,7 @@ struct BodyWeightView2: View {
     var bodyweight: String // Get from Fillinginformation2
     @State private var currentTime: String = "" // To hold real-time
     @State private var notice: String = "" // Notice input
+    @State private var showConfirmation = false
 
     var body: some View {
         VStack(spacing: 20) {
@@ -50,12 +51,17 @@ struct BodyWeightView2: View {
                 .frame(width: 250)
 
             Button("Save") {
-                // Save button action
+                saveInformation()
+                showConfirmation = true
             }
-            .frame(maxWidth: 150, maxHeight: 44)
-            .background(Color.blue)
+            .alert(isPresented: $showConfirmation) {
+                Alert(title: Text("Saved"), message: Text("Your information has been saved."), dismissButton: .default(Text("OK")))
+            }
             .foregroundColor(.white)
+            .frame(width: 150, height: 44)
+            .background(Color.blue)
             .cornerRadius(8)
+            .padding(.top, 20)
         }
         .padding(.horizontal, 20)
         .padding(.top, 20)
@@ -71,6 +77,11 @@ struct BodyWeightView2: View {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         currentTime = dateFormatter.string(from: Date())
+    }
+    
+    private func saveInformation() {
+        UserDefaults.standard.set(bodyweight, forKey: "savedWeight")
+        UserDefaults.standard.set(notice, forKey: "savedNotice")
     }
 }
 

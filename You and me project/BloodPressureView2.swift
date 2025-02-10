@@ -12,6 +12,8 @@ struct BloodPressureView2: View {
     //var pressure: String
     var systolic: String
     var diastoloe: String
+    @State var BloodPressureResult = ""
+    @State private var showConfirmation = false
     
     @State private var measurementPlace: String = "Arm" // Default place
     @State private var noteworthyMeasure: String = "" // Default is none of the options
@@ -28,8 +30,11 @@ struct BloodPressureView2: View {
             Text("Blood pressure is...")
                 .font(.title3)
                 .padding(.bottom, 10)
-
-            Text(systolic + "/" + diastoloe)
+                .onAppear() {
+                    BloodPressureResult = "\(systolic) / \(diastoloe)"
+                }
+            
+            Text(BloodPressureResult)
                 .font(.largeTitle)
                 .bold()
 
@@ -76,12 +81,17 @@ struct BloodPressureView2: View {
                 .frame(width: 250)
 
             Button("Save") {
-                // Save button action
+                saveInformation()
+                showConfirmation = true
             }
-            .frame(maxWidth: 150, maxHeight: 44)
-            .background(Color.blue)
+            .alert(isPresented: $showConfirmation) {
+                Alert(title: Text("Saved"), message: Text("Your information has been saved."), dismissButton: .default(Text("OK")))
+            }
             .foregroundColor(.white)
+            .frame(width: 150, height: 44)
+            .background(Color.blue)
             .cornerRadius(8)
+            .padding(.top, 20)
         }
         .padding(.horizontal, 20)
         .padding(.top, 20)
@@ -97,6 +107,11 @@ struct BloodPressureView2: View {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         currentTime = dateFormatter.string(from: Date())
+    }
+    
+    private func saveInformation() {
+        UserDefaults.standard.set(BloodPressureResult, forKey: "savedBloodPressure")
+        UserDefaults.standard.set(notice, forKey: "savedNotice")
     }
 }
 

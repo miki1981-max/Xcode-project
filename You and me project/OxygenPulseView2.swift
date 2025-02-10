@@ -11,6 +11,8 @@ struct OxygenPulseView2: View {
     var oxygen: String
     var value2: String
     var pulse: String   // Pass these from previous frame
+    @State private var showConfirmation = false
+    @State var OxygenPulseResult = ""
     @State private var currentTime: String = "" // To hold real-time
     @State private var notice: String = "" // Notice input
 
@@ -24,8 +26,12 @@ struct OxygenPulseView2: View {
             Text("Oxygen and pulse is...")
                 .font(.title3)
                 .padding(.bottom, 10)
+                .onAppear() {
+                    OxygenPulseResult = "\(oxygen) / \(value2) / \(pulse)"
+                }
 
-            Text(oxygen + "/" + value2 + "/" + pulse)
+            //Text(oxygen + "/" + value2 + "/" + pulse)
+            Text(OxygenPulseResult)
                 .font(.largeTitle)
                 .bold()
 
@@ -52,12 +58,17 @@ struct OxygenPulseView2: View {
                 .frame(width: 250)
 
             Button("Save") {
-                // Save button action
+                saveInformation()
+                showConfirmation = true
             }
-            .frame(maxWidth: 150, maxHeight: 44)
-            .background(Color.blue)
+            .alert(isPresented: $showConfirmation) {
+                Alert(title: Text("Saved"), message: Text("Your information has been saved."), dismissButton: .default(Text("OK")))
+            }
             .foregroundColor(.white)
+            .frame(width: 150, height: 44)
+            .background(Color.blue)
             .cornerRadius(8)
+            .padding(.top, 20)
         }
         .padding(.horizontal, 20)
         .padding(.top, 20)
@@ -73,6 +84,11 @@ struct OxygenPulseView2: View {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         currentTime = dateFormatter.string(from: Date())
+    }
+    
+    private func saveInformation() {
+        UserDefaults.standard.set(OxygenPulseResult, forKey: "savedWeight")
+        UserDefaults.standard.set(notice, forKey: "savedNotice")
     }
 }
 
