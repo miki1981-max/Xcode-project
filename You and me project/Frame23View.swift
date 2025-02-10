@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct Frame23View: View {
-    @State private var currentTime: String = ""
-    @State private var patient: String = ""
-    @State private var gender: String = ""
-    @State private var age: Int = 66
+    @State private var currentTime: String = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
+    @State private var patient: String = UserDefaults.standard.string(forKey: "SavedName") ?? "Unknown"
+    @State private var gender: String = UserDefaults.standard.string(forKey: "SavedGender") ?? "Unspecified"
+    @State private var age: String = {
+        let dob = UserDefaults.standard.object(forKey: "SavedDOB") as? Date ?? Date()
+        let ageComponents = Calendar.current.dateComponents([.year], from: dob, to: Date())
+        return "\(ageComponents.year ?? 0)"
+    }()
     @State private var weight: Float = 65.0
     @State private var pressure: Float = 80
     @State private var oxygen: Int = 50
     @State private var pulse: Int = 80
-    @State private var temperature: Float = 37
+    @State private var temperature: Float = UserDefaults.standard.float(forKey: "savedBodyTemperature")
     @State private var sugarLevel: Float = UserDefaults.standard.float(forKey: "savedBloodSugarLevel")
 
     var body: some View {
-        VStack{
+        VStack {
             HStack {
                 Text(currentTime)
                     .font(.headline)
@@ -28,11 +32,11 @@ struct Frame23View: View {
                     .frame(maxWidth: 100, maxHeight: 40)
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(8)
-                
+
                 Spacer()
 
                 Button("TODAY") {
-                    updateCurrentTime()
+                    currentTime = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
                 }
                 .frame(maxWidth: 100, maxHeight: 40)
                 .background(Color.blue)
@@ -41,36 +45,32 @@ struct Frame23View: View {
             }
             .padding(.top, 20)
             .padding(.horizontal, 20)
-            .onAppear {
-                updateCurrentTime()
-            }
 
             VStack(spacing: 10) {
-                Group {
-                    entryField(label: "Name", value: $patient)
-                    entryField(label: "Gender", value: $gender)
-                    entryField(label: "Age", value: $age)
-                    entryField(label: "Weight", value: $weight)
-                    entryField(label: "Pressure", value: $pressure)
-                }
-                Group {
-                    entryField(label: "Oxygen", value: $oxygen)
-                    entryField(label: "Pulse", value: $pulse)
-                    entryField(label: "Body temperature", value: $temperature)
-                    entryField(label: "Sugar level", value: $sugarLevel)
-                }
+                entryField(label: "Name", value: $patient)
+                entryField(label: "Gender", value: $gender)
+                entryField(label: "Age", value: $age)
+                entryField(label: "Weight", value: $weight)
+                entryField(label: "Pressure", value: $pressure)
+                entryField(label: "Oxygen", value: $oxygen)
+                entryField(label: "Pulse", value: $pulse)
+                entryField(label: "Body temperature", value: $temperature)
+                entryField(label: "Sugar level", value: $sugarLevel)
             }
+            .padding()
+
+            NavigationLink(destination: Fillinginformation1()) {
+                Text("Back to List of Symptoms")
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, maxHeight: 44)
+                    .background(Color.green)
+                    .cornerRadius(8)
+            }
+            .padding(.bottom, 20)
         }
-        .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Background"))
         .ignoresSafeArea()
-    }
-
-    private func updateCurrentTime() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        currentTime = dateFormatter.string(from: Date())
     }
 
     @ViewBuilder

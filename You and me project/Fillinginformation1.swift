@@ -57,7 +57,7 @@ struct Fillinginformation1: View {
                     .fontWeight(.medium)
                     .cornerRadius(10)
                         
-                    NavigationLink(destination:BodyTemperatureView ()) {
+                    NavigationLink(destination:BodyTemperatureView()) {
                         Text("Body temperature     ")
                         Circle()
                             .stroke(lineWidth: 4)
