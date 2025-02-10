@@ -95,7 +95,7 @@ struct Fillinginformation1: View {
                 .background(Color.background)
             }
             .alert(isPresented: $ShowAlert) {
-                Alert(title: Text("NOTICE"), message: Text("The information your specify about yourself or your care receiver in these fields will be saved for the purposes of determining optimal procedures of care."), dismissButton: .default(Text("OK")))
+                Alert(title: Text("NOTICE"), message: Text("The information you specify about yourself or your care receiver in these fields will be saved for the purposes of determining optimal procedures of care."), dismissButton: .default(Text("OK")))
             }
         }
         .background(Color.background)
