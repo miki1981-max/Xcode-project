@@ -11,16 +11,32 @@ struct RecommendationsView1: View {
     var body: some View {
         NavigationView {
             VStack {
+                
+                    
                 Text("Recommendations for a person who uses a cane or walkers. The steps described below can be done either by a sick person independently or with the help of an assistant.")
-                    .font(.title2)
-                    .fontWeight(.heavy)
-                    .navigationBarTitle("")
-                    VStack {
-                        NavigationLink(destination: Fillinginformation1()) {
-                            Text("List of symptoms")
-                                .font(.largeTitle)
-                                .frame(width: 300, height: 50)
-                                .background(Color.white)
+                
+                    .navigationBarTitle("Recommendations", displayMode:.inline)
+                    
+                VStack {
+                    Text("NOTE: The survey is reserved for registered users! Please ignore otherwise.")
+                    
+                    NavigationLink(destination: Survey12()) {
+                        Text("Do a survey")
+                            .font(.largeTitle)
+                            .foregroundColor(Color.white)
+                            .frame(width: 300, height: 50)
+                            .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom))
+                    }
+                    .frame(width: 300, height: 50)
+                    .cornerRadius(15)
+                    .shadow(radius: 5)
+                    .padding()
+                    
+                    NavigationLink(destination: Fillinginformation1()) {
+                        Text("List of symptoms")
+                            .font(.largeTitle)
+                            .frame(width: 300, height: 50)
+                            .background(Color.white)
                         }
                         .frame(width: 320, height: 50)
                         .background(Color.white)
