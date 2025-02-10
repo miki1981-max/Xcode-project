@@ -8,37 +8,72 @@
 import SwiftUI
 
 struct Frame25View: View {
+    @State private var selectedCategory: String? // Tracks the selected category
+
     var body: some View {
-        VStack {
-            Text("Library")
-                .font(.title)
-                .bold()
-                .padding(.top, 140)  // Increased padding for better alignment at the top
+        NavigationStack {
+            VStack {
+                // Title
+                Text("Library")
+                    .font(.title)
+                    .bold()
+                    .padding(.top, 100)
 
-            Text("Here you can find links to helpful articles on caring for elderly or sick persons.")
-                .font(.body)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 20)
-                .padding(.top, 60)  // Added some top padding for spacing
+                // Description
+                Text("Here you can find links to helpful articles on caring for elderly or sick persons.")
+                    .font(.body)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 50)
 
-            // Buttons for different categories
-            Spacer(minLength: 50)  // Adds spacing before the buttons
+                Spacer(minLength: 50)
 
-            Button("Intimate Hygiene") {
-                // Navigation action or function here
+                // Navigation Button for "Comfort and Safety"
+                NavigationLink(
+                    destination: LinksListView2(category: "Intimate Hygiene", links: intimatehygieneLinks),
+                    tag: "Intimate Hygiene",
+                    selection: $selectedCategory
+                ) {
+                    Button("Intimate Hygiene") {
+                        selectedCategory = "Intimate Hygiene"
+                    }
+                    .buttonStyle(Frame25ButtonStyle())
+                }
+
+                // Navigation Button for "Hygiene"
+                NavigationLink(
+                    destination: LinksListView2(category: "Taking Medications", links: takingmedicationsLinks),
+                    tag: "Taking Medications",
+                    selection: $selectedCategory
+                ) {
+                    Button("Taking Medications") {
+                        selectedCategory = "Taking Medications"
+                    }
+                    .buttonStyle(Frame25ButtonStyle())
+                }
+
+                Spacer()
             }
-            .buttonStyle(Frame25ButtonStyle())
-
-            Button("Taking Medications") {
-                // Navigation action or function here
-            }
-            .buttonStyle(Frame25ButtonStyle())
-
-            Spacer()  // Pushes everything up
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("Background"))
+            .ignoresSafeArea()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Background"))  // Ensure this matches your asset name
-        .ignoresSafeArea()
+    }
+
+    
+    private var intimatehygieneLinks: [String] {
+        [
+            "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://lab-seid.com/six-tips-keep-hygiene-intimate-prevent-infections/%3Flang%3Den&ved=2ahUKEwjB1-LK67eLAxVCFRAIHdzRJGUQFnoECDQQAQ&usg=AOvVaw2yipv3ZrOyxLxVshlVf3zR",
+            "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.cumlaudelab.com/en/how-to-choose-the-best-intimate-hygiene-product/&ved=2ahUKEwjB1-LK67eLAxVCFRAIHdzRJGUQFnoECC4QAQ&usg=AOvVaw0wqjmWuDgIGd_BnATJTxB8"
+        ]
+    }
+
+    
+    private var takingmedicationsLinks: [String] {
+        [
+            "https://www.nia.nih.gov/health/medicines-and-medication-management/taking-medicines-safely-you-age",
+            "https://www.nia.nih.gov/news/dangers-polypharmacy-and-case-deprescribing-older-adults"
+        ]
     }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A3C8FD22D597DBF00C28463 /* LinksListView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C8FD12D597DBF00C28463 /* LinksListView2.swift */; };
+		0A3C8FD42D59825000C28463 /* LinksListView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C8FD32D59825000C28463 /* LinksListView3.swift */; };
 		0A443FE22D53531800E53EE9 /* Frame24View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A443FE12D53531800E53EE9 /* Frame24View.swift */; };
 		0A443FE42D5353E600E53EE9 /* Frame25View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A443FE32D5353E600E53EE9 /* Frame25View.swift */; };
 		0A443FE62D53547200E53EE9 /* Frame26View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A443FE52D53547200E53EE9 /* Frame26View.swift */; };
@@ -65,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A3C8FD12D597DBF00C28463 /* LinksListView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksListView2.swift; sourceTree = "<group>"; };
+		0A3C8FD32D59825000C28463 /* LinksListView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksListView3.swift; sourceTree = "<group>"; };
 		0A443FE12D53531800E53EE9 /* Frame24View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame24View.swift; sourceTree = "<group>"; };
 		0A443FE32D5353E600E53EE9 /* Frame25View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame25View.swift; sourceTree = "<group>"; };
 		0A443FE52D53547200E53EE9 /* Frame26View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame26View.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				0A820AB72D401150002FB3D8 /* Frame23View.swift */,
 				0A443FE12D53531800E53EE9 /* Frame24View.swift */,
 				0A443FE32D5353E600E53EE9 /* Frame25View.swift */,
+				0A3C8FD32D59825000C28463 /* LinksListView3.swift */,
+				0A3C8FD12D597DBF00C28463 /* LinksListView2.swift */,
 				0A443FE52D53547200E53EE9 /* Frame26View.swift */,
 				0A443FE72D539EB300E53EE9 /* LinksListView.swift */,
 				89D475082D01F6D30000DB82 /* LoginView.swift */,
@@ -371,6 +377,7 @@
 				89D4750B2D01FBBF0000DB82 /* RegistrationView.swift in Sources */,
 				89C4EE642D45570800181C54 /* Firebasecode.swift in Sources */,
 				89C4EE592D4520C200181C54 /* Survey12.swift in Sources */,
+				0A3C8FD42D59825000C28463 /* LinksListView3.swift in Sources */,
 				898303AB2D54D1A3005B4BDF /* WelcomePage.swift in Sources */,
 				0A820AB22D400678002FB3D8 /* BodyTempView2.swift in Sources */,
 				0A7D4EBC2D3FCBBF001AA2A7 /* BodyTempView1.swift in Sources */,
@@ -379,6 +386,7 @@
 				A18CED0E2D402715001DB433 /* RecommendationsView2.swift in Sources */,
 				A100EFF72D53AB9F00112B6D /* OxygenPulseView1.swift in Sources */,
 				A100EFF82D53AB9F00112B6D /* BodyWeightView1.swift in Sources */,
+				0A3C8FD22D597DBF00C28463 /* LinksListView2.swift in Sources */,
 				A100EFF92D53AB9F00112B6D /* BloodPressureView1.swift in Sources */,
 				A100EFFA2D53AB9F00112B6D /* BloodPressureView2.swift in Sources */,
 				A100EFFB2D53AB9F00112B6D /* OxygenPulseView2.swift in Sources */,
