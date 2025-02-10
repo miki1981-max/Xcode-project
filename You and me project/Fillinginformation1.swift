@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Fillinginformation1: View {
+    @State var firebase = Firebasecode()
     @State private var ShowAlert = true
     
     var body: some View {
@@ -17,6 +18,11 @@ struct Fillinginformation1: View {
                     .font(.title)
                     .fontWeight(.heavy)
                     .navigationBarTitle("")
+                
+                Button(action: { firebase.userLogout() }) {
+                    Text("Sign Out")
+                }
+                
                 VStack(alignment: .leading) {
                     NavigationLink(destination: BodyWeightView1()) {
                         Text("Weight                         ")
@@ -91,9 +97,9 @@ struct Fillinginformation1: View {
             .alert(isPresented: $ShowAlert) {
                 Alert(title: Text("NOTICE"), message: Text("The information your specify about yourself or your care receiver in these fields will be saved for the purposes of determining optimal procedures of care."), dismissButton: .default(Text("OK")))
             }
-            
         }
         .background(Color.background)
+        
     }
 }
 

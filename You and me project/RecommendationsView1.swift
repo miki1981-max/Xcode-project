@@ -17,9 +17,9 @@ struct RecommendationsView1: View {
                     .navigationBarTitle("")
                     VStack {
                         NavigationLink(destination: Fillinginformation1()) {
-                            Text("Morning")
+                            Text("List of symptoms")
                                 .font(.largeTitle)
-                                .frame(width: 150, height: 50)
+                                .frame(width: 300, height: 50)
                                 .background(Color.white)
                         }
                         .frame(width: 320, height: 50)
