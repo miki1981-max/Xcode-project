@@ -18,7 +18,7 @@ struct ContentView:View
         
         VStack {
             if isLoggedIn == true {
-                GeneralinformationIView2()
+                RecommendationsView1()
             }
             if isLoggedIn == false {
                 StartPageView()

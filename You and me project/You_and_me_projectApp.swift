@@ -23,7 +23,7 @@ struct You_and_me_projectApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartPageView()
         }
     }
 }

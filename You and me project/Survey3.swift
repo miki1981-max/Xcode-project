@@ -55,8 +55,8 @@ struct Survey3: View {
                     }
                 }
                 NavigationLink(destination: RecommendationsView1()) {
-                    Text("Next")
-                        .frame(width: 100.0,height:50)
+                    Text("Finish and go back to recommendations")
+                        .frame(width: 160, height: 50)
                         .foregroundColor(.black)
                         .padding()
                         .background(Color.white)

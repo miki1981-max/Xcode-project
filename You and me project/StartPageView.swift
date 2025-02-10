@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StartPageView: View {
-    
+    @State private var showAlert = false
     var body: some View {
         NavigationView {
             VStack {
@@ -55,6 +55,15 @@ struct StartPageView: View {
                             .cornerRadius(20)
                             .shadow(color: .blue.opacity(0.4), radius: 8, x: 0, y: 5)
                             .padding(.bottom, 80)
+                        
+                        //About this App general information
+                        
+                        Button ("General information") {
+                            
+                            showAlert = true
+                        }.alert(isPresented: $showAlert) {
+                            Alert(title:Text ("General information"), message: Text("This app is an efficient assistant in caring for elderly or sick persons. After the registration step, you need to complete a survey that consists of 4 questions. Your answers will help the app in making an appropriate care plan you can use in the future. Besides, the app includes such features as a symptom diary and a library. All recommendations and articles are written by experts."), dismissButton: . default(Text ("OK")))
+                        }
                         
                         // Start Button
                         NavigationLink(destination: WelcomePage()) {

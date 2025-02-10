@@ -88,7 +88,7 @@ struct RegistrationView: View {
                 .background(Color.background)
 
                 .navigationDestination( isPresented:$navigateToGeneralInfo) {
-                    GeneralinformationIView2()
+                    ContentView()
             }
 
         }
