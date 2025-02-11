@@ -17,7 +17,7 @@ struct Frame20View: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 10) {
-                Text("Diary")
+                Text("List of symptoms")
                     .font(.largeTitle)
                     .bold()
                     .padding(.top, 100)

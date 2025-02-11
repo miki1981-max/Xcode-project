@@ -14,14 +14,10 @@ struct Fillinginformation1: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Diary")
+                Text("List of symptoms")
                     .font(.title)
                     .fontWeight(.heavy)
                     .navigationBarTitle("")
-                
-                Button(action: { firebase.userLogout() }) {
-                    Text("Sign Out")
-                }
                 
                 VStack(alignment: .leading) {
                     NavigationLink(destination: BodyWeightView1()) {

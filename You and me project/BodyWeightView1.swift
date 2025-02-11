@@ -36,7 +36,7 @@ struct BodyWeightView1: View {
 
     private var titleSection: some View {
         VStack {
-            Text("Diary").font(.largeTitle).bold()
+            Text("List of symptoms").font(.largeTitle).bold()
             Text("Body Weight").font(.headline)
             Text("Please enter your or the care receiver's body weight")
                 .font(.subheadline)

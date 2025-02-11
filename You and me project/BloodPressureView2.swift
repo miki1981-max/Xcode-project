@@ -22,7 +22,7 @@ struct BloodPressureView2: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Diary")
+            Text("List of symptoms")
                 .font(.largeTitle)
                 .bold()
                 .padding(.top, 50)

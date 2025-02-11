@@ -83,7 +83,23 @@ struct RecommendationsView1: View {
                         .background(Color.white)
                         .fontWeight(.medium)
                         .cornerRadius(15)
-                        
+                    
+                        NavigationLink(destination: WelcomePage()) {
+                            Text("Sign Out")
+                        }
+                        .frame(width: 100, height: 40)
+                        .foregroundColor(.white)
+                        .background(LinearGradient(
+                                gradient: Gradient(colors: [Color.purple, Color.blue]),
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
+                        .cornerRadius(15)
+                        .shadow(radius: 5)
+                        .simultaneousGesture(TapGesture().onEnded {
+                            firebase.userLogout()
+                        })
+                        )
                     }
                     .frame(maxWidth: 800, maxHeight: 900)
                     .background(Color.background)

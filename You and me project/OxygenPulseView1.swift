@@ -37,7 +37,7 @@ struct OxygenPulseView1: View {
 
     private var titleSection: some View {
         VStack {
-            Text("Diary").font(.largeTitle).bold()
+            Text("List of symptoms").font(.largeTitle).bold()
             Text("Oxygen and pulse").font(.headline)
             Text("Please enter your or the care receiver's oygen saturation data and pulse")
                 .font(.subheadline)

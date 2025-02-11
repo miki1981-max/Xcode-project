@@ -37,7 +37,7 @@ struct BloodPressureView1: View {
 
     private var titleSection: some View {
         VStack {
-            Text("Diary").font(.largeTitle).bold()
+            Text("List of symptoms").font(.largeTitle).bold()
             Text("Blood Pressure").font(.headline)
             Text("Please enter your or the care receiver's blood pressure")
                 .font(.subheadline)
