@@ -12,7 +12,7 @@ struct Frame22View: View {
     @State private var notice: String = ""
     @State private var showConfirmation = false
     @State private var currentTime: String = ""
-    @State private var selectedMealTiming: String = "Before a meal"  // Default option
+    @State private var selectedMealTiming: String = "Before a meal"
 
     var body: some View {
         NavigationView {
@@ -57,7 +57,7 @@ struct Frame22View: View {
                 .padding(.vertical, 10)
 
                 Text("When was this sugar level measured?")
-                    .font(.headline) // Increased font size
+                    .font(.headline)
                     .multilineTextAlignment(.center)
                     .padding(.vertical, 5)
 

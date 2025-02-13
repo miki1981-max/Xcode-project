@@ -17,11 +17,9 @@ struct WelcomePage: View {
     var body: some View {
            
                ZStack {
-                   // Background color from assets
                    Color("Background").ignoresSafeArea()
                    
                    VStack(spacing: 40) {
-                       // Animated Icon
                        ZStack {
                            Circle()
                                .fill(Color.white.opacity(0.2))
@@ -40,7 +38,6 @@ struct WelcomePage: View {
                        }
                        .padding(.top, 40)
                        
-                       // Welcome Text
                        Text("This App helps you")
                            .font(.largeTitle)
                            .italic()
@@ -51,7 +48,6 @@ struct WelcomePage: View {
                            .navigationBarTitle("Welcome",
                                                displayMode:.inline)
                        
-                       // Feature List without hard rectangle
                        VStack(alignment: .leading, spacing: 10) {
                            ForEach(items, id: \.self) { item in
                                HStack {
@@ -65,10 +61,9 @@ struct WelcomePage: View {
                        }
                        .padding(.horizontal, 30)
                        .padding(.vertical, 10)
-                       .background(Color.white.opacity(0)) // No hard rectangle
+                       .background(Color.white.opacity(0))
                        .cornerRadius(15)
                        
-                       // Login Button
                        NavigationLink(destination: LoginView()) {
                            Text("Log in")
                                .font(.headline)
@@ -85,7 +80,6 @@ struct WelcomePage: View {
                                .shadow(radius: 5)
                        }
                        
-                       // Registration Button
                        NavigationLink(destination: RegistrationView()) {
                            Text("Registration")
                                .font(.headline)

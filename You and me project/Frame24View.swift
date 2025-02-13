@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct Frame24View: View {
-    @State private var selectedCategory: String? // Tracks the selected category
+    @State private var selectedCategory: String?
 
     var body: some View {
         NavigationStack {
             VStack {
-                // Title
                 Text("Library")
                     .font(.title)
                     .bold()
                     .padding(.top, 100)
 
-                // Description
                 Text("Here you can find links to helpful articles on caring for elderly or sick persons.")
                     .font(.body)
                     .multilineTextAlignment(.center)
@@ -28,7 +26,6 @@ struct Frame24View: View {
 
                 Spacer(minLength: 50)
 
-                // Navigation Button for "Comfort and Safety"
                 NavigationLink(
                     destination: LinksListView(category: "Comfort and Safety", links: comfortAndSafetyLinks),
                     tag: "Comfort and Safety",
@@ -40,7 +37,6 @@ struct Frame24View: View {
                     .buttonStyle(Frame24ButtonStyle())
                 }
 
-                // Navigation Button for "Hygiene"
                 NavigationLink(
                     destination: LinksListView(category: "Hygiene", links: hygieneLinks),
                     tag: "Hygiene",
@@ -60,7 +56,6 @@ struct Frame24View: View {
         }
     }
 
-    // Links for "Comfort and Safety"
     private var comfortAndSafetyLinks: [String] {
         [
             "https://www.agingcare.com/articles/tips-for-keeping-seniors-safe-at-home-140217.htm",
@@ -68,7 +63,6 @@ struct Frame24View: View {
         ]
     }
 
-    // Links for "Hygiene"
     private var hygieneLinks: [String] {
         [
             "https://www.caregiver.org/resource/personal-hygiene/",
@@ -77,7 +71,6 @@ struct Frame24View: View {
     }
 }
 
-// Custom button style for uniform appearance
 struct Frame24ButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

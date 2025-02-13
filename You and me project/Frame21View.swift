@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Frame21View: View {
-    @State private var sugarLevel = "" // Store sugar level as a string
-    @State private var navigateToNextScreen = false // State to control navigation
+    @State private var sugarLevel = ""
+    @State private var navigateToNextScreen = false
 
     var body: some View {
         NavigationView {
@@ -17,7 +17,7 @@ struct Frame21View: View {
                 backgroundView
                 contentStack
             }
-            .navigationBarHidden(true) // Optionally hide the navigation bar
+            .navigationBarHidden(true)
         }
     }
     private var backgroundView: some View {
@@ -75,7 +75,7 @@ struct Frame21View: View {
 
     private var nextButton: some View {
         Button("Next") {
-            navigateToNextScreen = true // Trigger navigation
+            navigateToNextScreen = true
         }
         .foregroundColor(.white)
         .frame(maxWidth: 150, maxHeight: 44)
@@ -86,7 +86,7 @@ struct Frame21View: View {
             
             NavigationLink(destination: Frame22View(bloodSugarLevel: $sugarLevel), isActive: $navigateToNextScreen) {
 
-                EmptyView() // Invisible navigation link activated by the button
+                EmptyView()
             }
         )
     }
