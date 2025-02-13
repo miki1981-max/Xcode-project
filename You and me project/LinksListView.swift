@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct LinksListView: View {
-    var category: String // The category name (e.g., Comfort and Safety)
-    var links: [String] // List of links to display
+    var category: String
+    var links: [String]
 
     var body: some View {
         VStack(spacing: 30) {
-            // Title
+            
             Text(category)
                 .font(.largeTitle)
                 .bold()
@@ -21,14 +21,12 @@ struct LinksListView: View {
                 .multilineTextAlignment(.center)
                 .padding(.top, 120)
 
-            // Description
             Text("Here are some helpful articles:")
                 .font(.headline)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
 
-            // List of Links
             ScrollView {
                 VStack(spacing: 20) {
                     ForEach(links, id: \.self) { link in
@@ -63,7 +61,7 @@ struct LinksListView: View {
         }
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Background")) // Background color from assets
+        .background(Color("Background"))
         .ignoresSafeArea()
     }
 

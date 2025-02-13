@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct Frame25View: View {
-    @State private var selectedCategory: String? // Tracks the selected category
+    @State private var selectedCategory: String?
 
     var body: some View {
         NavigationStack {
             VStack {
-                // Title
                 Text("Library")
                     .font(.title)
                     .bold()
                     .padding(.top, 100)
 
-                // Description
                 Text("Here you can find links to helpful articles on caring for elderly or sick persons.")
                     .font(.body)
                     .multilineTextAlignment(.center)
@@ -28,7 +26,6 @@ struct Frame25View: View {
 
                 Spacer(minLength: 50)
 
-                // Navigation Button for "Comfort and Safety"
                 NavigationLink(
                     destination: LinksListView2(category: "Intimate Hygiene", links: intimatehygieneLinks),
                     tag: "Intimate Hygiene",
@@ -40,7 +37,6 @@ struct Frame25View: View {
                     .buttonStyle(Frame25ButtonStyle())
                 }
 
-                // Navigation Button for "Hygiene"
                 NavigationLink(
                     destination: LinksListView2(category: "Taking Medications", links: takingmedicationsLinks),
                     tag: "Taking Medications",
@@ -77,7 +73,6 @@ struct Frame25View: View {
     }
 }
 
-// Custom button style for uniform appearance
 struct Frame25ButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

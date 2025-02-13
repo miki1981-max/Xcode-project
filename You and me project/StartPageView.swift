@@ -13,11 +13,9 @@ struct StartPageView: View {
         NavigationView {
             VStack {
                 ZStack {
-                    // Background color from assets
                     Color("Background").ignoresSafeArea()
                     
                     VStack(spacing: 30) {
-                        // Animated Icon
                         ZStack {
                             Circle()
                                 .fill(Color.white.opacity(0.2))
@@ -37,7 +35,6 @@ struct StartPageView: View {
                         }
                         .padding(.top, 40)
                         
-                        // Title
                         Text("You and Me")
                             .font(.largeTitle)
                             .italic()
@@ -46,7 +43,6 @@ struct StartPageView: View {
                             .shadow(color: .blue.opacity(0.5), radius: 10, x: 0, y: 5)
                             .padding(.bottom, 10)
                         
-                        // Subtitle
                         Text("Elderly Care Service")
                             .font(.headline)
                             .padding()
@@ -56,7 +52,6 @@ struct StartPageView: View {
                             .shadow(color: .blue.opacity(0.4), radius: 8, x: 0, y: 5)
                             .padding(.bottom, 80)
                         
-                        //About this App general information
                         
                         Button ("General information") {
                             
@@ -65,7 +60,6 @@ struct StartPageView: View {
                             Alert(title:Text ("General information"), message: Text("This app is an efficient assistant in caring for elderly or sick persons. After the registration step, you need to complete a survey that consists of 4 questions. Your answers will help the app in making an appropriate care plan you can use in the future. Besides, the app includes such features as a symptom diary and a library. All recommendations and articles are written by experts."), dismissButton: . default(Text ("OK")))
                         }
                         
-                        // Start Button
                         NavigationLink(destination: WelcomePage()) {
                             Text("Start")
                                 .font(.headline)
